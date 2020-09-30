@@ -1,0 +1,66 @@
+# desalinated
+Documentation of Salt and Sanctuary Desalinated mod
+
+Salt and Sanctuary: Desalinated 2.0.0 +
+by Zephyr Greene
+
+This is merely an overview and specifics can be found in the documentation folder (TBD).
+I will go as deep as I can on each subject within its own file.
+
+------------------------------------------------------------------------------------------------------------------------------------------
+Bug Fixes
+
+1. Ring of Meditation -> Prayers are now properly discounted.
+2. Burning Sky Ring -> Spells and Incantations are now properly discounted.
+3. GUI Focus -> Focus costs now displayed as true costs instead of base costs.
+4. Elemental -> Elemental attack bonuses now use base damage instead of base physical damage.
+5. Pale Charm -> Attack Reach now affects Spear class weapons and various Spin attack_anims.
+6. Offhand Magic -> Incantations and Prayers now use the highest base value between offhand and mainhand, instead of defaulting to offhand.
+7. GUI Damage -> Damage numbers now include Buffs and Sanctuary bonuses. Fist damage is also now visible.
+8. GUI Damage -> Now also has Attack and Attack2 for Ammo1 vs Ammo2 or mainhand vs offhand.
+9. Dark Swarm -> Updated to use loot data for focus cost like other magicks.
+10. Gunblade -> This should never eat your charms or bug out anymore. Certain attack combos still ignore ammo_cost.
+11. Other -> Bugs may have been fixed that weren't documented.
+
+-1. Bug introduced -> This mod breaks the internal Steamworks Leaderboard functionality. This means jurney bottles, hanged players,
+roaming players, and boss candles are disabled/naked. Co-op play is unaffected.
+
+------------------------------------------------------------------------------------------------------------------------------------------
+
+New Files (Json/Sjson)
+
+The previous version of Desalinated required you to unpack and repack binary data into XML. This has been removed.
+Now all major data files exist in Simplified Json files (.sjson) and are loaded into the game automagically, so that you don't have to manually pack/unpack like before.
+More files are available to edit and some files have been split apart so that you only have to dig through relevant data.
+These files can be customized on a per-Mod basis and fully allow new items to be created.
+Spells and Throwing weapons now use a Missile definition, so extra versions of these should also be possible.
+The new Missiles file allows modders to edit projectile damage and base trajectory. (i.e. Lob vs Throw)
+The new HitsTable file allows for modifying stamina costs and damage ratios of Melee/Mainhand weapons.
+SkillTree and CharClass files allow you to customize a full fledged mod or just a given run to try out!
+
+------------------------------------------------------------------------------------------------------------------------------------------
+
+Loot Affixes aka Specials
+
+A significant portion of this mod is merely to give dynamic control to the modder through item properties. I called these Affixes.
+Each equipment type: Mainhand, Offhand, Shield, Helm, Chest, Boots, Pants, Gloves, Rings, Charms; can have an unbounded number of Affixes on them.
+Consumables and Magicks that apply to the player also use their own set of Affixes, which trigger buffs such as Enchants, Defenses, etc.
+Each affix has 4 properties. The primary properties are Affix Name and Value which control most affixes.
+There are two additional properties for specialized Affixes such as Duration for timing Buffs and Property for internal triggers.
+The Affix Value property allows for math and a single if-else ternary operator.
+Using the SkillTree file, modders can add Affixes to SkillNodes to craft extremely unique experiences.
+
+------------------------------------------------------------------------------------------------------------------------------------------
+
+Other
+
+Fists now have their own weapon data now!
+Shields now have Parry values!
+Blocking with a Weapon or Fists now uses an Affix to reference a shield item for its defense and parry values.
+Complete overhaul of the damage system. This has pros and cons. It will be different and may require fine tuning for balance.
+GameRules and Formulas now allow you to modify global functionalities like Poison application or duration.
+Formulas use the same player data, math, and functionalities as Affixes.
+The game can now be unbounded by FPS (I tested at 300 ish), but this may have unknown/unseen side effects.
+
+Oh and also cosmetic armor slots.
+------------------------------------------------------------------------------------------------------------------------------------------ 
