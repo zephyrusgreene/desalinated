@@ -4,5 +4,5 @@ This is a modding framework for Salt & Sanctuary that adds new features for spec
 and value based loot specials such as: attack speed%, potion healing values, dynamic spell costs in the GUI, weapon and spell 
 scaling controls, alternative formulas for game mechanics, and much more!
 
-This project only features documentation, as displaying the code for the mod would also display code for the original game.
+This repository only features documentation, as displaying the code for the mod would also display code for the original game.
 The mod itself can found here => https://www.nexusmods.com/saltandsanctuary/mods/9
