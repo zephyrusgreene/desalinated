@@ -1,0 +1,34 @@
+Salt and Sanctuary: Desalinated 2.1.0+
+by Zephyr Greene
+
+
+
+Damage Overview
+
+------------------------------------------------------------------------------------------------------------------------------------------
+Behind the scenes I've rebuilt almost every line of damage code to bring new functionality and control to weapons, spells, throwing stuffs, etc.
+
+Because of these changes, the game will be different. It may not be completely balanced. Some things might be weaker or stronger at different 
+points in the game. 
+
+There are now two attack sections on the UI. "Attack" will show your mainhand damage while "Attack2" is your offhand or secondary ammo/spell.
+
+The DamageUI is now very dynamic to weapon enchantments, stats, sanctuary statues and the like. It should show you mostly correct values for 
+all weapon combinations, ammo variants, spells, etc. It does all the basic damage math. Even fist and gunblade damage should display AND compare!
+
+------------------------------------------------------------------------------------------------------------------------------------------
+Min and Max Damage (Variance)
+
+One of the first things you may notice is that you can now see a damage range in the UI. If you do not want damage variance in your mod, 
+simply set everything to have the same values for min and max. There is a setting in modconfig.ini to export files with or without variance.
+
+------------------------------------------------------------------------------------------------------------------------------------------
+Elemental Damage
+
+Each weapon or damaging effect now has the ability to set values independent of each other. Previously, the game only allowed base damage
+and an elemental flag that allowed 50% of a single element. Strike and Slash damage were all internally controlled as well. Now you can 
+simply set each one. For example you can build a weapon with only Fire and Holy! If that weapon is a gunblade, it could shoot Blunt (Strike)
+bullets! Similarly, weapon enchantments are no longer limited to singular types either. You can use multiple weapon buff affixes.
+
+------------------------------------------------------------------------------------------------------------------------------------------
+Damage Calculations (See next file 5b)

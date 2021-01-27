@@ -1,0 +1,72 @@
+Salt and Sanctuary: Desalinated 2.1.0+
+by Zephyr Greene
+
+
+
+Damage Calculations
+
+------------------------------------------------------------------------------------------------------------------------------------------
+Stats Scaling and other Decisions
+
+With the damage rewrite and various musings on what should or should not be built in what ways, I bring you what is and will be.
+
+The original damage had some minor issues in what I'd call player traps. Some weapons had extremely low scaling in one stat and medium or 
+high scaling in another. The best case scenario often meant to actually ignore the weaker stat, but it stared at you in every menu begging 
+you to get more dexterity even though it only had an E scaling. The Branding Iron was one of the biggest offenders. What started as a 50/50
+split between physical and fire damages would shift via stat scaling to 20/80 or so. This is no longer possible. Agree or disagree, it's changed.
+
+Damage scaling on stats is now even across all stats. A weapon with Magic-stat scaling will scale fire, holy, arcane, poison, strike and slash,
+instead of the previous stat scalings, which used a 5th special scaling for magical and holy weapons. This means all ratios have been adjusted.
+Damage ratios are intended to be similar to a nearly max ranked weapon (50 in every stat). The Branding Iron mentioned above then starts 20/80
+and never shifts from that ratio from stat scaling.
+
+Weapon Enchantments (Buffs)
+
+Elemental bonuses such as those from buffs, charms, sacred page, and pitchfire will scale from the weapon's base damage and not the 
+Physical damage only. Weapon enchantments cannot be 'glitched' to stack anymore and using a new item or buff will cancel all other 
+enchantments that are currently on the player's weapon. However, it is now possible to have enchantments give multiple damage types
+at once such as DBW granting a combination of Holy & Fire.
+
+------------------------------------------------------------------------------------------------------------------------------------------
+Simply put, damage primarily either adds to the base damage of the effect or adds a multiplier on top of it.
+------------------------------------------------------------------------------------------------------------------------------------------
+Physical Damage
+
+Order of Calculations
+
+0. Ammo Damage					| Additive to Base
+1. Stat Scaling 				| Multiplier
+2. Rank Scaling					| Multiplier
+3. Buffs and Enchantments 		| Multiplier
+4. Critical Effects 			| Multiplier (Optional through affixes)
+5. Sanctuary Bonuses			| Multiplier (Follows the same rules as before, the bonus can be modified in Rules)
+6. Defiled Debuff				| Multiplier (Defiled Flask)
+
+
+------------------------------------------------------------------------------------------------------------------------------------------
+Magic Damage
+
+Order of Calculations
+
+1. Weapon Spell Strength 		| Used as base damage
+2. Stats Scaling on Weapon		| Multiplier #1
+3. Magic/Spell Base				| Used as base damage part 2
+4. Scaled Magic Damage			| Multiplier on #3
+5. Do Formula					| Special Stuff
+5. Magic Amp Buff				| Multiplier
+6. Sanctuary Bonuses			| Multiplier
+7. Defiled Flask				| Multiplier
+
+Magical damage uses its original formula where part of the damage comes from the staff or current weapon 
+				and part comes from the magic used.
+		
+Formula = (#4 * (#2 * C + 0.5)
+			Magic Scaling Constant = 0.02
+			
+Another note, when choosing the weapon I have now prioritized the highest Spell Strength between your mainhand and offhand. 
+This means that if your mainhand has a higher Spell Strength, your damage will not be downgraded by calculating with 
+your pistol or wand. The base value of Spell Strength on weapons is their previous base damage. This is how the original game 
+calculated damage for magics (Spells, Incantations, and Prayers). 
+
+In other words, while a lot has changed, damage should be very very similar.
+------------------------------------------------------------------------------------------------------------------------------------------

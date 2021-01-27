@@ -1,0 +1,15 @@
+Salt and Sanctuary: Desalinated 2.1.0+
+by Zephyr Greene
+
+
+
+Keys and Materials
+
+keys.sjson, materials.sjson
+------------------------------------------------------------------------------------------------------------------------------------------
+There's not really any data changes from the base game here, nor are they recommended to be touched.
+
+You can try your hand at changing some ID's here and there. It may break or mess up future saves, etc.
+It may work perfectly too, never tried. So if you're adventurous, try changing key order (or randomizer?).
+
+------------------------------------------------------------------------------------------------------------------------------------------

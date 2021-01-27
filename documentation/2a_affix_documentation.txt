@@ -1,0 +1,77 @@
+Salt and Sanctuary: Desalinated 2.1.0+
+by Zephyr Greene
+
+
+Please read the Overview and ModConfig documentations first!
+
+
+Affixes 
+
+------------------------------------------------------------------------------------------------------------------------------------------
+The Basics
+
+Affixes are used on all equippable items. An Affix changes stats on a character while the item is equipped. Affixes cannot be placed on 
+throwing weapons or ammo. You can have a functionally limitless number of affixes on a single loot item. Much like the original game, 
+items will not display affixes. It is advised that modders edit the item's description and follow KISS (keep it simple, stupid).
+
+See also: loot overview
+
+
+------------------------------------------------------------------------------------------------------------------------------------------
+How to set up an Affix
+
+Each affix has 4 properties. eid is the Name of the affix, value is the magnitude of the affix typically as a +% value, duration is used 
+	only for affixes that trigger buffs, and property is a specialized value for extremely specific affixes. 
+	
+Below you can see a basic example, this is using a form of JSON called Simplified JSON. This makes JSON a bit more readable. The following example 
+could be found on a weapon, charm, ring, or armor piece. Extra modifiers can be added by extending the collection with a , and brackets {} and its own data. 
+
+The following example shows 2 affixes. The first adds 3 life to the player on every physical hit. 
+The second modifier grants +16% Attack Damage for all physical attacks (hits).
+	
+
+lootAffixes = [
+      {
+        eid = "ADD_HP_HIT_ATK",
+        value = "3.0",
+        duration = "0",
+        property = "0"
+      }, 
+	  {
+        eid = "MULT_ALL_TYPE_ATK",
+        value = "0.16",
+        duration = "0",
+        property = "0"
+      }, 
+    ]
+
+------------------------------------------------------------------------------------------------------------------------------------------
+Conditional Effects
+
+Effects like Redhair Charm are granted via equations now, seen below:
+
+lootAffixes = [
+      {
+        eid = "MULT_ALL_TYPE_ATK",
+        value = "xhp/hp <= 0.25 ? 0.5 : 0",
+        duration = "0",
+        property = "0"
+      }
+    ]
+
+An equation can contain a single "if else" statement using the ?: ternary operator.
+This works like so: [conditional evaluation] ? [result if true] : [result if false]
+
+In the future there will be conditions based on equipped weapons.
+For example gaining +50% unarmed damage would use: 
+
+			eid = "MULT_MELEE_ATK_DAM",
+			value = "fists ? 0.50 : 0.0"
+
+Also in the future skill tree nodes will allow Affixes.
+For example you could grant "Archery 3" to have +100% attack speed:
+
+			eid = "MULT_RANGED_ATK_SPEED",
+			value = "bow ? 1.00 : 0.0"
+			
+-----------------------------------------------------------------------------------------------------------------------------------------

@@ -1,0 +1,40 @@
+Salt and Sanctuary: Desalinated 2.1.0+
+by Zephyr Greene
+
+
+
+Shields
+
+------------------------------------------------------------------------------------------------------------------------------------------
+This doc file is describing the structure of shields.sjson.
+
+Type				| Denotes the type by integer | Functions on a per category basis.
+Upgrade 			| Controls category of items for upgrading.
+UpgradeFac  		| Value multiplier per rank | 1.10 = 10% | Rank 7 = 1.10^7
+Name 				| Internal name | Also used for referencing items/other in data files.
+Title				| Display name based on localization (language settings)
+Desc				| In game description based on localization.
+Img					| In game image file. | HUD and inventory only.
+Texture				| Visual texture used for item while equipped.
+Weight 				| Weight of the item. How much Equip/Load it consumes.
+ArmorDefense 		| Defense per damage type from the item.
+LootAffixes 		| List/Collection of Affixes attached to the item.
+BashDamage 			| Tower Shields only. | "5,10" means random between 5-10 damage 
+Parry 				| How long the parry window lasts. Shields only. | Shorter = harder
+ParryAnim 			| Which Parry Animation the item uses. Shields only.
+StatScaling			| Scaling for each stat. Scaling now affects the base damage evenly. | Bash Damage Only
+EquipReqs			| Levels for primary and secondary requirements. (levels only not item classes)
+UpgradePath			| Items used to transmute this item.
+GoldValue			| How much gold the item costs
+
+Category 			| Deprecated. Newer versions won't export this variable
+TexIdx 				| Deprecated. Newer versions won't export this variable
+TexIdx2				| Deprecated. Newer versions won't export this variable
+
+------------------------------------------------------------------------------------------------------------------------------------------
+Shield Types 
+
+SHIELD_TYPE_BUCKLER = 0										SHIELD_TYPE_TOWER = 3
+SHIELD_TYPE_HEATER = 1										SHIELD_TYPE_1H_HACK = 4 | No longer used
+SHIELD_TYPE_KITE = 2
+------------------------------------------------------------------------------------------------------------------------------------------
