@@ -1,0 +1,11 @@
+Salt and Sanctuary: Desalinated 3.0.0
+by Zephyrus Greene
+
+ModConfig
+------------------------------------------------------------------------------------------------------------------------------------------
+This is a basic overview of the modconfig.ini file
+
+
+Desalinated now uses this file in the background.
+It stores your last used mods, maps, and settings when booting and exporting.
+------------------------------------------------------------------------------------------------------------------------------------------

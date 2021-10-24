@@ -1,0 +1,58 @@
+Salt and Sanctuary: Desalinated
+Last Updated for 3.0.0
+by Zephyr Greene
+
+
+Affixes 
+
+------------------------------------------------------------------------------------------------------------------------------------------
+The Basics
+
+This mod expanded and rebuilt various item flags and special effects into a single, larger system. This affix system
+allows the user to add, remove, or modify the strength of effects. There are over 200 affixes. Many are expanded
+from the base game, but others are entirely new things for modders to play with.
+
+Affixes can be added to the following files and places:
+	
+	Items 			=> 	Weapons, Armors, Rings, Charms, Buffs (Weapon enchants, potions, magics)
+	Skills			=> 	Each node can have affixes. Affixes scale by skill node rank.
+	Charactersheet	=>	The character can have affixes by default here.
+	
+------------------------------------------------------------------------------------------------------------------------------------------
+Each affix has 4 properties.
+
+eid 		= Name 
+value 		= numerical property | can use calculations and a single conditional if/true/false operator (?: operator)
+duration 	= used for time | cannot use calculations
+property 	= special name field or effect field | used sparingly for more unique affixes
+
+------------------------------------------------------------------------------------------------------------------------------------------
+How to set up an Affix
+
+Below you can see a basic example in the SJSON text structure.
+Extra modifiers can be added by extending the notation with a comma ',' and adding another affix bracketed structure afterwards. 
+
+The following example shows 2 affixes. The first adds 3 life to the player on every physical hit. 
+The second modifier grants +16% Attack Damage for all physical attacks (hits).
+	
+
+lootAffixes = [
+      {
+        eid = "ADD_HP_HIT_ATK",
+        value = "3.0",
+        duration = "0",
+        property = "0"
+      }, 
+	  {
+        eid = "MULT_ALL_TYPE_ATK",
+        value = "0.16",
+        duration = "0",
+        property = "0"
+      } 
+    ]
+
+------------------------------------------------------------------------------------------------------------------------------------------
+Conditional Effects
+
+See the "Affix Value Calculations" file for advanced effects and conditional values.
+-----------------------------------------------------------------------------------------------------------------------------------------

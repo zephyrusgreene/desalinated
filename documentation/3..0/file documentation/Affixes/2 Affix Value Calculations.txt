@@ -1,0 +1,54 @@
+Salt and Sanctuary: Desalinated 2.1.0+
+by Zephyr Greene
+
+Equations & Symbol Table
+------------------------------------------------------------------------------------------------------------------------------------------
+This is where possibilities get fun!
+The Value field in Loot Affixes allows for equations.
+There are also dynamic keywords that can be used to reference back to current player numbers.
+
+Some basic uses for equations are when using potions.
+A healing potion will typically heal for "hp*1.0" which means 100% of your max hp.
+
+You may also create conditional situations such as: 
+
+"If health is below 25%, gain 50% physical damage"
+This would use the affix: MULT_ALL_TYPE_ATK
+and the Value "xhp < 0.25*hp ? 0.50 : 0"
+
+Here is a list of keywords:
+
+lvl = level							xhp = current hp (x marks the spot)
+str = strength						hp = max hp (ignores wounds)
+end = endurance						xmp = current mp (focus)
+dex = dexterity						mp = max mp
+will = willpower					xsp = current stamina
+mag = magic							sp = max stamina (ignores fatigue)
+wis = wisdom						fat = fatigue (focus spent or lost is fatigue)
+scalem = magic scaling				wds = wounds (max hp lost)
+scalew = weapon scaling				cpt = corruption (caused by Blood Vial potion/other)
+eqp = equipment %
+
+Weapon Checks
+You can also check to see if the player has certain weapons equipped!
+To create fist only bonuses 
+you can use the affix: MULT_MELEE_ATK_DAM
+with the Value "fists ? 0.5 : 0"
+
+fists								sword
+berserk = axes and maces			bow 
+great = great weapons				staff
+shield								wand
+spear = spear, poleaxe, halberd		whip = whip and chainwhip
+xbow = crossbow						whipsword = whipsword only
+pistol = flintlock
+
+Boolean Operators 
+These are allowed operators for comparison
+Parenthesis are also allowed ()
+
+<							>
+<=							>=
+=							<> (not equal)
+AND							OR
+

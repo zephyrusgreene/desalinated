@@ -1,0 +1,38 @@
+Salt and Sanctuary: Desalinated
+Last Updated for 3.0.0
+by Zephyr Greene
+
+
+
+Damage Overview
+
+------------------------------------------------------------------------------------------------------------------------------------------
+Behind the scenes I've rebuilt the majority of player damage code to bring new functionality and control to weapons, spells, etc.
+Because of these changes, the game will have some (mostly minor) differences from the original game's release.
+
+------------------------------------------------------------------------------------------------------------------------------------------
+Damage UI
+
+There are now two attack sections on the UI. "Attack" will show your mainhand damage while "Attack2" is your offhand or secondary ammo/spell.
+
+The DamageUI is now very dynamic to weapon enchantments, stats, sanctuary statues and the like. It should show you mostly correct values for 
+all weapon combinations, ammo variants, spells, etc. Damage compare when in your inventory is relatively reliable, but once items are equipped, 
+they should always be correct.
+
+------------------------------------------------------------------------------------------------------------------------------------------
+Min and Max Damage (Variance)
+
+One of the first things you may notice is that you can now see a damage range in the UI. If you do not want damage variance in your mod, 
+you can turn if off in globals.sjson. While turned off, only Max damage is used and shown in the UI.
+
+------------------------------------------------------------------------------------------------------------------------------------------
+Elemental Damage
+
+Originally weapons could only be 50/50 split between elemental and physical. Damage is now explicit and can be controlled per type.
+Similarly, weapon enchantments are no longer limited to singular types either. You can use multiple weapon buff affixes.
+
+For simplicity of code and ease of player understanding, the biggest true change is to elemental damage. Buffs now calculate
+just like charms. This means that they respect the final values after stats and rank scaling values. Buffs were similarly rebalanced. 
+Some weapons will be weaker with buffs, while others will be stronger.
+
+------------------------------------------------------------------------------------------------------------------------------------------

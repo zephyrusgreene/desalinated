@@ -1,0 +1,387 @@
+Salt and Sanctuary: Desalinated 
+Last Updated for 3.0.0
+by Zephyr Greene
+
+Affix List
+
+Names are not case sensitive, but are presented as they are from the code.
+This file is only a list with a basic description of each affix or grouping.
+------------------------------------------------------------------------------------------------------------------------------------------
+NONE | Default
+
+Attributes
+Each adds to the respective character stat
+
+ADD_STRENGTH
+ADD_ENDURANCE
+ADD_DEXTERITY
+ADD_WILLPOWER
+ADD_MAGIC
+ADD_WISDOM
+
+Pool Stats
+Each adds to the Health, Focus (mana), or Stamina pools
+
+ADD_MAX_HP | Adds to player's base health points
+ADD_MAX_MP | Adds to focus points
+ADD_MAX_SP | Adds to stamina points
+
+MULT_MAX_MP | Multiplier against base MP 
+MULT_MAX_HP 
+MULT_MAX_SP 
+
+Movement 
+ADD_RUNSPEED | Increases player's base runspeed 
+MULT_RUNSPEED | Increases player's total runspeed | Equip weight  penalty is subtracted from the total
+
+Damage Stats
+Adds a multiplier of the damage type to the scaled base combat damage
+Combat Damage here means everything except Stagger
+Only works on Attacks. i.e. non-magic attacks
+
+MULT_BLUNT_ATK
+MULT_SLASH_ATK
+MULT_POISON_ATK
+MULT_FIRE_ATK
+MULT_LIT_ATK
+MULT_HOLY_ATK
+MULT_ARCANE_ATK
+MULT_ALL_TYPE_ATK | Used for Bloodflower Charm | Does not increase Stagger damage 
+
+Stagger Stats
+Adds base Stagger damage to Attacks
+Or adds multiplier to final stagger damage
+
+ADD_STAGGER_ATK
+MULT_STAGGER_ATK
+
+Defensive Stats
+Adds to or multiplies the base defense of the damage type
+
+ADD_BLUNT_DEF
+ADD_SLASH_DEF
+ADD_POISON_DEF
+ADD_FIRE_DEF
+ADD_LIT_DEF
+ADD_HOLY_DEF
+ADD_ARCANE_DEF
+ADD_STAGGER_DEF
+
+ADD_PHYS_DEF | Strike, Slash, and Poison
+ADD_ELEM_DEF | Fire, Lightning, Holy, and Arcane
+ADD_ALL_DEF | Adds all combat defense types. Ignores stagger defense.
+
+MULT_BLUNT_DEF
+MULT_SLASH_DEF
+MULT_POISON_DEF
+MULT_FIRE_DEF
+MULT_LIT_DEF
+MULT_HOLY_DEF
+MULT_ARCANE_DEF
+MULT_STAGGER_DEF
+MULT_PHYS_DEF 
+MULT_ELEM_DEF 
+MULT_ALL_DEF 
+
+Over time resources
+Grants the value of Health, Focus, or Stamina as X per second.
+
+ADD_HP_REGEN
+ADD_MP_REGEN
+ADD_SP_REGEN
+
+Hit Effects
+On hit effects apply on a per hit per, enemy basis.
+Example and Warning: Using a sword that adds elemental imbalance will add quickly in groups of enemies
+
+ADD_HP_HIT_ATK
+ADD_HP_HIT_PERCENT_ATK 
+ADD_MP_HIT_ATK
+ADD_MP_HIT_PERCENT_ATK
+ADD_SP_HIT_ATK
+ADD_SP_HIT_PERCENT_ATK
+ADD_SALT_HIT_ATK
+ADD_PLAYER_POISON_HIT_ATK
+CHANCE_CREATE_PROJECTILE_HIT_ATK | Creates a projectile from the Missle file | Missile name is placed into the Property field
+ADD_ELEM_BAL_HIT_ATK | Positive value is Fire and negative is lightning | Spells are originally +/- 2 | Going over 10 points damages the player
+
+On Spell Hit 
+This includes all Magic that attempts to do damage.
+   
+ADD_HP_HIT_SPELL
+ADD_HP_HIT_PERCENT_SPELL
+ADD_MP_HIT_SPELL
+ADD_MP_HIT_PERCENT_SPELL
+ADD_SP_HIT_SPELL
+ADD_SP_HIT_PERCENT_SPELL
+ADD_SALT_HIT_SPELL
+ADD_PLAYER_POISON_HIT_SPELL
+CHANCE_CREATE_PROJECTILE_HIT_SPELL
+ADD_ELEM_BAL_HIT_SPELL
+
+Poison Buildup
+This adds a small value to quicken the Pop of poison damage
+
+ADD_POISON_BUILDUP_HIT | Default value is 0.5 | See also Poison stuff in globals.sjson
+
+On Kill Effects
+Same thing as the on hits but instead it's on kill
+Traps and Hazards won't trigger this.
+
+ADD_HP_KILL
+ADD_MP_KILL
+ADD_SP_KILL
+ADD_SALT_KILL
+ADD_PLAYER_POISON_KILL
+CHANCE_CREATE_PROJECTILE_KILL
+ADD_ELEM_BAL_KILL
+ON_ELEM_BAL_RESET_KILL
+
+On Block Effects
+Triggers the effects above but instead on block.
+Block means anytime you stop damage by absorbing it with your shield.
+
+ADD_HP_BLOCK
+ADD_MP_BLOCK
+ADD_SP_BLOCK
+ADD_SALT_BLOCK 
+ADD_PLAYER_POISON_BLOCK
+CHANCE_CREATE_PROJECTILE_BLOCK
+ADD_ELEM_BAL_BLOCK
+ON_ELEM_BAL_RESET_BLOCK
+MULT_THORNS_BLOCK | Reflects Melee attack damage to the attacker
+
+On Parry Effects
+Triggers the same effects on Parry.
+
+MULT_PARRY_DURATION | Increases parry window by a percentage
+
+ADD_HP_PARRY
+ADD_MP_PARRY
+ADD_SP_PARRY
+ADD_SALT_PARRY
+ADD_POISON_PARRY
+CHANCE_CREATE_PROJECTILE_PARRY
+ADD_ELEM_BAL_PARRY
+ON_ELEM_BAL_RESET_PARRY
+ON_REFLECT_PROJ_PARRY
+
+On Getting Hit
+Triggers the same effects when you take damage
+
+ADD_HP_GETHIT
+ADD_MP_GETHIT
+ADD_SP_GETHIT
+ADD_SALT_GETHIT
+ADD_POISON_GETHIT
+ADD_ELEM_BAL_GETHIT
+ON_ELEM_BAL_RESET_GETHIT
+CHANCE_CREATE_PROJECTILE_GETHIT 
+MULT_THORNS_GETHIT
+
+Stagger Stuff
+Changes how staggers affect your character
+Does not change effects that throw or launch you
+
+MULT_STAGGER_RECOVERY_GETHIT | Increases the speed that you recover from stagger effects
+MULT_STAGGER_KNOCKBACK_GETHIT | Decreases the distance staggers push you | Negative will push you farther
+
+Loot Drops!
+Item Find adds to the base and is used in a formula.
+All drops are based on the player who gets the last hit
+
+ADD_MORE_ITEMS | See also Formulas.sjson
+MULT_MORE_SALT
+MULT_MORE_GOLD
+
+Special Visuals
+
+ADD_MORE_GORE | Merely makes combat bloodier
+ON_MORE_LIGHT | Adds light to the player
+ON_SALT_COMPASS | Points to last death/saltbat
+
+Weapon Special Combat
+Reach increases your Melee attack strike-origins
+Large reach values can cause missed hits in close range by reaching over the target
+Even moderate reach values on arcing attacks can be huge
+
+ADD_MELEE_ATK_REACH | Default is 10 reach | Recommended values 10-100
+MULT_ATK_SLIDE | Slides the player fowards on swing | larger values sort of teleport the player
+
+Attack Speeds
+Ranged includes all projectile weapons: Bows, Crossbows, and Pistols
+Throwing includes all thrown consumables no matter their type
+
+MULT_MELEE_ATK_SPEED
+MULT_RANGED_ATK_SPEED
+MULT_THROW_ATK_SPEED
+
+Damage multipliers by Attack type
+
+MULT_MELEE_ATK_DAM | Used for bloodflower RING as well as Goldenwine | Multiplicative with MULT_ALL_TYPE_ATK (e.g. 1.10 * 1.10)
+MULT_RANGED_ATK_DAM  | Used in combination for the same as above | Same 
+MULT_THROW_DAM | Add this to a pair of gloves or something for throwing builds | Same
+
+Movement Speed
+Movement speed is calculated as : (basespeed + addspeed) * multspeed - (EquipFactor * EquipPercent) = final
+
+ADD_RUNSPEED 	| Basespeed is 500. Adding +50 would be 10%
+MULT_RUNSPEED	
+
+
+
+Charge-Attack effects
+Only affects melee charge attacks
+
+MULT_CHARGEUP_ATK_SPD | Speed of the melee chargeup animation
+ADD_CHARGEUP_ATK_REACH | Adds reach to the charged melee attack | Additive with other Reach bonus
+MULT_CHARGEUP_ATK_DAM | Grants bonus to charged melee attck damage | 
+MULT_CHARGEUP_ATK_STAM_COST | Lowers (or increases) stamina cost of charged melee attack
+ON_CHARGE_RELEASE_THROW_PROJECTILE | Releases a Projectile on Full Charge | Damage can be glitchy in close range
+
+Rolling Effects
+
+MULT_ROLL_ANIM_SPEED | Speeds up the roll animation, does not affect distance
+MULT_ROLL_STAM_COST | Lowers roll stamina cost
+
+Piercing Projectiles!
+Can be used to make Arrows/Bolts pierce through the target
+Value is a multiplier 
+
+CHANCE_PIERCING_ARROWS | A value 0.9 would decrease the damage each time the arrow passes through a target | 1.10 would increase damage
+CHANCE_PIERCING_DAGGERS | Potatoes are also daggers
+
+Critical Damage
+Allows Critical effects based on subclass categories
+
+MULT_MELEE_ATK_CRIT_CHANCE | Additive if used on multiple items
+MULT_MELEE_ATK_CRIT_DAM | Critical has no base bonus value | Additive if used on multiple items
+MULT_HUNTER_ATK_CRIT_CHANCE | Ranged and throwing attacks 
+MULT_HUNTER_ATK_CRIT_DAM
+MULT_SPELL_CRIT_CHANCE | Includes all magics that can damage
+MULT_SPELL_CRIT_DAM 
+
+Cost Reductions
+Uses basic categories
+
+MULT_MELEE_STAM_COST | Used for Whistlebone Charm
+MULT_SPELL_STAM_COST | All magics
+MULT_RANGED_STAM_COST | Mutually exclusive to anything Melee
+DIM_GLOBAL_STAM_COST | Reduces stamina cost on everything, multiplicatively compounding with the above | Affects every single stamina cost
+
+Magic Specials and Costs
+
+MULT_MAGIC_CAST_SPD | Faster Spell casting animations
+MULT_MAGIC_DAM  | Amplifies spell damage
+MULT_SPELL_MP_COST | 
+MULT_INCANT_MP_COST
+MULT_PRAYER_MP_COST
+
+OFF_ELEM_BAL | Turns Elemental balance off if greater than 0
+MULT_ELEM_BAL | Multiplies all elemental balance | Includes the Bloody debuff from blood magic as well
+MULT_BARRAGE_HITS | Multiplies how many max hits rapid fire spells can do 
+
+Combat Debuffs
+Wounds decrease max HP
+Fatigue decreaes max Stamina
+See also: the spellcaster rings in Rings.sjson
+
+DIM_DAM_TO_WOUND_COST | Diminishing returns, lowers the ratio of damage converted to wounds | E.g. Base / (1 + this) | Pumpkin Helmet uses 1.0
+DIM_STAMINA_TO_FATIGUE_COST | Diminishing, lowers the ratio of stamina usage converted to Fatigue | Used for relentless ring 
+MULT_FATIGUE_BAR | Changes how Fatigue reduces max Stamina 
+MULT_WOUND_BAR | Changes how Wounding effects max Health | Setting this to 0.5 will allow max health to diminish to 25% (0.5 * 0.5)
+
+Falling 
+MULT_FALL_DAMAGE_REDUCT | Reduces all falling damage by a percent
+ON_FALL_NO_DEATH | Farthest fall category will no longer trigger an instant-kill
+
+Unique Effects
+WEAPON_MISSILE_EFFECT_OVERRIDE | locks the missile type used for the weapon | Used by pistols, crossbows, bows, and gunblades
+GUNBLADE_RANGED_OVERRIDE | Used for gunblades only | Property field is used to link to any Pistol by name
+CHANCE_ITEM_DROP | Value is % chance to drop | Property field is used to link to any item to be dropped and can be multiples of that item.
+					E.g. "throw_potato/100" will drop 100 potatoes 
+
+UI/Overlay
+Each of these is an icon that previously was attached to an effect from the original game.
+These can now be used separately or removed. Any value greater than 0 with these affix names will cause them to display.
+
+ICON_HEAL
+ICON_HEAL_REDGLOW
+ICON_SALT
+ICON_GOLD
+ICON_LOOT
+ICON_WINGS
+ICON_MAGIC
+ICON_DEX
+ICON_SPELLCOST
+ICON_PRAYERCOST
+ICON_LOWHP // redhair charm
+ICON_SWORD // bloodflower ring or charm
+ICON_SHIELD
+ICON_SHIELD_POISON
+ICON_SHIELD_FIRE
+ICON_SHIELD_LIT
+ICON_SHIELD_HOLY
+ICON_SHIELD_ARCANE
+
+Potion Affixes
+These are used to apply self-buffing effects.
+Some are instant and some use the Duration field.
+
+POTION_INSTANT_HEAL | Instant HP
+POTION_INSTANT_RESTORE | Instant Focus (Same as removing Fatigue)
+POTION_INSTANT_MEND | Instant Wounds removal
+POTION_INSTANT_ADD_SALT | Instant Salt | Used for Salt bags
+POTION_INSTANT_SELFPOISON | Instant Poison on self | Used for Splender wines
+POTION_INSTANT_ANTIDOTE | Instantly removes Poison | Used for Antidote item
+POTION_INSTANT_CLEANSE | Instant Cleanse All
+POTION_BUFF_HEAL_ALLY  | Heals the other player in Co-Op
+POTION_INSTANT_MEND_ALLY | Removes wounds from the other player in Co-Op
+
+Damage Buffs (Enchants)
+These are multiplicative damage bonuses and are additive with other Damage based bonuses.
+Items that use these were restandardized to make the math simpler. <TODO Math file ref>
+
+POTION_ENCHANT_MULT_BLUNT
+POTION_ENCHANT_MULT_SLASH 
+POTION_ENCHANT_MULT_POISON
+POTION_ENCHANT_MULT_FIRE 
+POTION_ENCHANT_MULT_LIT
+POTION_ENCHANT_MULT_HOLY
+POTION_ENCHANT_MULT_ARCANE
+POTION_ENCHANT_MULT_ATK_DAM | Additive with MULT_ALL_TYPE_ATK
+POTION_ENCHANT_MULT_STAGGER
+
+Basic Healing (over time)
+Grants bonus resource over time
+
+POTION_BUFF_HEAL | Primary healing buff | Used for all creed red flasks
+POTION_BUFF_HEAL_STACK | Secondary healing buff | Stacks/ticks separately from above | Used for Red Shards
+POTION_BUFF_RESTORE | Grants Focus over time
+POTION_BUFF_STAMINA_REGEN | Grants Stamina over time | This pauses like normal stamina regen
+POTION_BUFF_STAMHOLD_REGEN | Grants Stamina over time | This ignores the short pause that occurs from many actions
+POTION_BUFF_SPELLBALANCE | Grants instant spell balance/imbalance | duration is ignored (uses normal internal timer)
+
+Special Creed Potions
+
+POTION_BUFF_PROTECT | Grants a multiplier to all defense | Does not include Stagger defense | Used for Water of Blessing (Devara)
+POTION_BUFF_DIVINE | Adds flat value to physical defense (strike, slash, poison)
+POTION_BUFF_ETHEREAL | Adds flat value to elemental defense (fire, lightning, holy, arcane)
+POTION_BUFF_GOLDEN_PHYS_DEF | Adds flat value to physical defense | Additive to Divine above
+POTION_BUFF_GOLDEN_ELEM_DEF | Adds flat value to elemental defense | Additive to Ethereal above
+POTION_BUFF_MULT_GOLDEN_WEALTH | Creates Gold Shimmer for duration | Value is additive to MULT_MORE_GOLD
+POTION_BUFF_GOLDEN_STAGGER | Goldenwine granted stagger bonus | Additive to MULT_STAGGER_ATK
+POTION_BUFF_DRUNK		| Causes a secondary poison effect | Used for House of Splendor wines
+
+POTION_BUFF_MANAHIT_ATK | Grants mana recovery via buff to any physical attack | Used for Clarity
+POTION_BUFF_MANAHIT_SPELL | Grants mana recovery via buff to any spell attack | Used for Clarity
+POTION_BUFF_MULT_MAGIC_DAM | Grants Magic damage bonus | Used for Clarity | Additive to MULT_MAGIC_DAM
+
+POTION_INSTANT_CORRUPTION | Adds corruption to the player | Used for HP and MP potions from Betrayer
+POTION_BUFF_VISION | Grants Undersight buff
+
+POTION_BUFF_FOUNTAIN | Grants many projectiles to flow like a fountain 
+					 | Property name references a consumable-throwing item or magic spell that creates projectiles
+					 | Used for Potato Fountain effect (See Hearty Potato in consumables.sjson)
+
+=================================================================================================================================================

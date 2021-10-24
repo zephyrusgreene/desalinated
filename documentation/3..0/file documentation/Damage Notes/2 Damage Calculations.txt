@@ -1,0 +1,80 @@
+Salt and Sanctuary: Desalinated
+Last Update 3.0.0
+by Zephyr Greene
+
+
+
+Damage Calculations
+
+------------------------------------------------------------------------------------------------------------------------------------------
+Stat Scaling and Rank Scaling
+
+In 2.0 stat scaling was changed to combine elemental and physical stat scaling bonuses together so that weapon scaling was simplified.
+This has been reverted. In 3.0 stat scaling and rank scaling is identical to the original game.
+
+Scaling values have been adjusted to correctly relate to the stats softcap.
+This doesn't actually change weapon damage, only the scaling numbers in the json file.
+
+------------------------------------------------------------------------------------------------------------------------------------------
+Weapon Buffs (Enchants)
+
+While other choices were reverted, this one was not. However, it was cleaned up and tested more thoroughly.
+A combination of choices was made in regards to Charms and Enchants. Elemental enchantments have been changed to be identical to charms
+in how they scale. This means that both calculate from the final weapon damage (after scaling). 
+Additionally, neither charms or buffs have a "matching elemental bonus" anymore.
+
+Lastly, buffs have been adjusted from 100% of prescaled weapon damage to 35% of postscaled weapon damage.
+To compare to the original game, enchantments ranged from 18% to 50% of post scaled weapon damage.
+
+------------------------------------------------------------------------------------------------------------------------------------------
+Ranged Weapons / Ammo
+
+In the original game ammo was added as a small, additional damage value to the end of the calculation.
+I have reversed this. Ammo is now added to the weapon's base damage before any scaling.
+Ranged weapons will be stronger because of this change, but special ammo now allows elemental shifts to be more valuable.
+
+Ammo damage bonus is maintained from the original game as 
+	
+	- Arrows +3
+	- Flintshot +2
+	- Bolts +2
+------------------------------------------------------------------------------------------------------------------------------------------
+Physical Damage
+
+Order of Calculations
+
+0. Ammo Damage					| Additive to Base
+1. Stat Scaling 				| Multiplier
+2. Rank Scaling					| Multiplier
+3. Buffs and Enchantments 		| Multiplier
+4. Critical Effects 			| Multiplier (Optional through affixes)
+5. Sanctuary Bonuses			| Multiplier (Follows the same rules as before, the bonus can be modified in charsheet)
+6. Defiled Debuff				| Multiplier (Defiled Flask)
+
+
+------------------------------------------------------------------------------------------------------------------------------------------
+Magic Damage
+
+Little to nothing has been changed here.
+In the original game the base damage of your weapon or offhand was used to calculate your magic damage.
+In Desalinated, this value is maintained separately from attack damage as Weapon Spell Strength.
+I have also prioritized the highest Spell Strength between your mainhand and offhand. 
+------------------------------------------------------------------------------------------------------------------------------------------
+Magic Damage
+
+Order of Calculations
+
+1. Weapon Spell Strength 		| Used as base damage
+2. Stats Scaling on Weapon		| Multiplier #1
+3. Magic/Spell Base				| Used as base damage part 2
+4. Scaled Magic Damage			| Multiplier on #3
+5. Do Formula					| Special Stuff
+5. Magic Amp Buff				| Multiplier
+6. Sanctuary Bonuses			| Multiplier
+7. Defiled Flask				| Multiplier
+
+Magical damage still uses its original formula shown below.
+		
+Formula = (#4 * (#2 * C + 0.5)
+			Magic Scaling Constant = 0.02
+------------------------------------------------------------------------------------------------------------------------------------------

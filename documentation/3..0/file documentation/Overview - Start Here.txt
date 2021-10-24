@@ -1,0 +1,81 @@
+Salt and Sanctuary: Desalinated 3.0.0
+by Zephyrus Greene
+
+
+
+Overview
+
+This is a simple overview.
+Each data file will be covered individually.
+						
+------------------------------------------------------------------------------------------------------------------------------------------
+Data Files (JSON/SJSON)
+
+This framework expands the data used from the base game. This new data is in a format called Simplified JSON or SJSON.
+These SJSON files allow users to edit data more easily with a text editor and let the game do the heavy lifting.
+While most of these files are converted and expanded from binary data files in the game folders, other files allow
+editing data that was previously internal to the game's exe.
+
+The following is a list of the data files unique to Desalinated, grouped by folder with a brief description:
+
+characters
+	globals			=> 	Contains global rules that effect both enemies and players.
+	charclass		=> 	Contains character starting items and skills.
+	charactersheet 	=>	Contains rules and numbers that effect the player character only.
+
+creeds
+	creeditems		=> 	Contains the type and quantity of items given by creed rewards.
+
+dialog	
+	dialog			=> 	Contains NPC dialogs, menus, scripting, and shop inventories.
+
+hits
+	hitstable		=> 	Contains melee hit triggers, damage ratios, and stamina costs.
+
+loot
+	weapons			=> 	Contains a list of all weapon damage, other data, and effects. 
+	armors			=> 	Contains a list of all armor defense, other data, and effects. 
+	shields			=> 	Contains a list of all sheild defense, parry data, and effects.
+	consumables		=> 	Contains a list of all consumables and their costs and effects.
+	magics			=> 	Contains a list of all magics and their costs and effects.
+	rings			=> 	Contains a list of all rings and charms with their effects. Also contains brands.
+	materials		=> 	Contains a list of all materials.
+	keys			=> 	Contains a list of all keys.
+
+loot/helpers
+	letterscaling	=>	Contains a table for changing how damage scaling is rated by letter.
+	lootupgrades	=>	Contains weapon, armor, and shield upgrade categories and their requirements.
+
+monsters		
+	monsters		=> 	Contains enemy data. Enemy damage remains internal to the exe.
+
+skilltree
+	skilltree		=> 	Contains a list of all skill nodes, their types, and their effects.
+	imgs			=>	Used as a reference for skill images. Not advised to change this.
+
+textures
+	texturelist		=> 	Allows extra, custom textures to be loaded at startup.
+
+------------------------------------------------------------------------------------------------------------------------------------------
+
+Loot Affixes (Specials)
+
+This mod expanded and rebuilt various item flags and special effects into a single, larger system. This affix system
+allows the user to add, remove, or modify the strength of effects. There are over 200 affixes. Many are expanded
+from the base game, but others are entirely new things for modders to play with.
+
+Affixes can be added to the following files and places:
+	
+	Items 			=> 	Weapons, Armors, Rings, Charms, Buffs (Weapon enchants, potions, magics)
+	Skills			=> 	Each node can have affixes. Affixes scale by skill node rank.
+	Charactersheet	=>	The character can have affixes by default here.
+
+------------------------------------------------------------------------------------------------------------------------------------------
+Action Effects
+
+Projectiles are now swappable on various loot items via ActionEffect. 
+A bow can shoot a fireball and a spell can shoot an arrow.
+
+------------------------------------------------------------------------------------------------------------------------------------------
+And more!
+------------------------------------------------------------------------------------------------------------------------------------------
