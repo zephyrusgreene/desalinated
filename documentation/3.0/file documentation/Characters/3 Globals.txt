@@ -1,0 +1,5 @@
+There's nothing here yet.
+
+This covers the globals.sjson file.
+
+Settings in this data file affect both players and enemies, unless otherwise stated.
