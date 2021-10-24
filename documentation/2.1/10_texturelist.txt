@@ -1,0 +1,19 @@
+Salt and Sanctuary: Desalinated 2.1.3+
+by Zephyr Greene
+
+
+
+Texture List
+------------------------------------------------------------------------------------------------------------------------------------------
+
+Introduced in 2.1.3 this allows the user to ADD new textures to the game, as long as they follow the sprite sheets of prior textures.
+
+You only need to add the filename of the new xnb texture file. Xnb is a default format for use in XNA/Monogame which is used in S&S.
+There are already a few custom XNB textures available on NexusMods. Textures in the list are loaded on boot but must be referenced on loot or 
+monsters to be applied.
+------------------------------------------------------------------------------------------------------------------------------------------
+
+FileName 		| The file name to look for. | Do not include the ".xnb" extension
+CellReference 	| The original file name for which the sprite-rectangles should follow. 
+Type 			| An internal type value | Recommended to just mimic whatever the original texture was.
+------------------------------------------------------------------------------------------------------------------------------------------

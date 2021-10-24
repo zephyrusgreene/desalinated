@@ -1,0 +1,13 @@
+Salt and Sanctuary: Desalinated 2.1.3+
+by Zephyr Greene
+
+
+
+Creed Items List
+------------------------------------------------------------------------------------------------------------------------------------------
+
+ID | The internal id of the creed | Shouldn't do anything if touched.
+AltMonsterStr | Internal name of the creed | Don't touch, only use as a reference
+Consumable | A list of exactly 4 items in order of: Health potion, Mana potion, special item1, special item2 | uses loot names, must be consumables
+------------------------------------------------------------------------------------------------------------------------------------------
+

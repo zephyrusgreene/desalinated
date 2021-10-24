@@ -1,0 +1,50 @@
+Salt and Sanctuary: Desalinated 2.1.0+
+by Zephyr Greene
+
+
+Formulas
+The formulas.sjson file allows you to modify in-game formulas such as item drops or max health.
+See also: Global Data document for the symbols (keywords) that are allowed here.
+
+Feel free to ignore this file unless you want to dig deep.
+
+------------------------------------------------------------------------------------------------------------------------------------------
+
+CharHealthPool_Formula | How your max health is calculated
+
+CharFocusPool_Formula | How your max focus (mana) is calculated 
+
+CharStaminaPool_Formula | How your max Stamina is calculated
+
+CharEquipPool_Formula | How your max Equipment (load or weight) value is calculated. 
+
+SoftCapStat_Formula | How the softcap for stats is calculated | value a is the value of the stat being checked
+
+SofterCapStat_Formula | How the softer softcap for stats is calculated | Used for non-damaging stats | value a is the stat being checked 
+
+CharResistAll_Formula | How much defense you get for free per level | default is 1.125 per level | Original game only showed 0.125 in UI
+
+StaminaRegen_Formula | How much stamina you regenerate per second | Normal stamina regen pauses after certain actions
+
+DropRate_Formula | How item drop rate is calculated | Drops are rolled individually true or false | Value A is monster listed drop chance
+							| Value B is player listed Item Find stat
+							
+MagicCost_Formula | How Spells calculate their cost | Default is more expensive with higher equip load | Val A is base mana cost
+
+IncantCost_Formula | How Incantations calculate their cost | Default is more expensive with higher equip load but slightly different from spells 
+							| Val A is base mana cost
+
+PrayerCost_Formula | How Prayers calculate their cost | Default is LESS expensive with higher equip load | Val A is base mana cost
+
+WeaponSpellPower_Formula | How magic damage is calculated | Value A is Spell Damage scaled with stats 
+							| Value B is Weapon Spell Power scaled with stats (shown as weapon spell damage in inventory)
+
+ElemFeedbackDamage_Formula | How much damage is dealt to the player if they go over 10 (max) elemental imbalance 
+
+ChargeAtkDam_Formula | The ratio of time for how your melee charge attack calculates. | Value A is Percent of charge time % complete 
+					 | Value B is the charge attack bonus damage ratio | E.g. (vala * valb) is linear allowing the player to release early
+					 | while (vala * vala * valb) is squared time, discouraging partial charge attacks
+					 | Final note on this, this also increases stamina cost by the same ratio
+
+ChargeAtkAddStagger_Formula | The ratio of how much bonus stagger the charge attack gains | Value A is charge time % again
+						    | This is additive not multiplicative

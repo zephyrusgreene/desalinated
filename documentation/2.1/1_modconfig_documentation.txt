@@ -1,0 +1,57 @@
+Salt and Sanctuary: Desalinated 2.1.0 +
+by Zephyr Greene
+
+ModConfig
+------------------------------------------------------------------------------------------------------------------------------------------
+This is a basic overview of the modconfig.ini file and 
+
+boot = binary, json, export (pick 1)
+modname = <name of mod> (This is case sensitive. Don't include the <> brackets)
+variance on export = true, false 
+
+------------------------------------------------------------------------------------------------------------------------------------------
+Boot
+
+= binary -> Starts the game using binary (default) files.
+			If using binary packaged mod such as Pax Empyrean's Balance mod, the game will attempt to read and convert that binary data.
+			In other words, it should convert binary mods to be playable with this framework.
+				
+= json -> Starts the game using .sjson files found in the folder: /mods/<ModName>/gamedata/2.0/
+			All files must exist or it will crash on boot up.
+
+= export -> Starts the game using the binary boot option, then converts them to the sjson format.
+			By default the framework will export to /mods/Vanilla/ and will OVERWRITE anything in that folder.
+			This folder comes pre-exported.
+			
+------------------------------------------------------------------------------------------------------------------------------------------		
+ModName
+
+= <name of mod> -> This is your text-based mod-loader. 
+					Change this name to any existing /mods/<modname>/ folder to use that mod.
+					Saves and gamedata are mod specific! So mods shouldn't interfere with each other.
+					This only affects the "boot = json" option.
+
+------------------------------------------------------------------------------------------------------------------------------------------
+Variance on Export
+
+= true -> This will add weapon variance (damage ranges) to pistols, swords, hammers, etc.
+			This uses hardcoded values to give some variance and flavor to weapon types.
+			This only affects the "boot = export" startup option.
+			Variance naturally can be handled manually or simply set to false.
+
+------------------------------------------------------------------------------------------------------------------------------------------
+GameData / Other notes
+
+Inside the /gamedata/ folder you can find every item, skill, class, etc.
+You can modify these!
+
+There are lots of intricate details and pieces in these files. Be cautious and make backups if you edit these regularly.
+
+Affixes
+
+All item bonuses are refered to as LootAffixes or simply Affixes. 
+In the original game these were called specials or flags and did various hardcoded effects like Slow Hitter.
+These are now used by everything from weapons and armors to potions and magics. 
+
+For more info on Affixes see the the file: affix_documentation
+For more info on the original Specials see: https://saltandsanctuary.wiki.fextralife.com/Specials+&+Flags

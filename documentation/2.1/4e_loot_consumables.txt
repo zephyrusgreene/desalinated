@@ -1,0 +1,64 @@
+Salt and Sanctuary: Desalinated 2.1.0+
+by Zephyr Greene
+
+
+
+Consumables
+
+------------------------------------------------------------------------------------------------------------------------------------------
+This doc file is describing the structure of consumables.sjson.
+
+Type				| Denotes the type by integer | Functions on a per category basis.
+Name 				| Internal name | Also used for referencing items/other in data files.
+Title				| Display name based on localization (language settings)
+Desc				| In game description based on localization.
+Img					| Inventory image.
+Flags 				| Consumables use them as an ID. | Still used for some items (Calling Horn)
+MissileName 		| The name of a missile in missiles.sjson.
+AmmoDamage 			| Damage per damage type via a range. | "5,10" means random between 5-10 damage 
+LootAffixes 		| Potion_Affixes primarily. Throwing weapons and ammo do not use affixes.
+SpellBaseVal 		| Deprecated. Does nothing.
+ConsumeSubtype 		| Differentiates Throwing, Self-Buff, Ammo, Enchants and Barrage effects.
+ConsumeSound 		| The internal name of a sound. Triggers at beginning of use. | YMMV
+CosmeticIcon 		| Extra Texture. Used for items you wear or hold. (Creed Icons, throwing knives, etc)
+ConsumeDepletes 	| Whether or not this item is reduced on usage. False = Infinite ammo, etc.
+StatScaling			| Scaling for each stat. Affects Spell-like effects and Thrown weapons
+GoldValue			| How much gold the item costs
+
+Category 			| Deprecated. Newer versions won't export this variable
+Durability			| Deprecated. Newer versions won't export this variable
+
+------------------------------------------------------------------------------------------------------------------------------------------
+Consumable Types
+
+CONSUMABLE_TYPE_QUICK_USE = 0;			| Non-ammo stuff | Used for safety checks
+CONSUMABLE_TYPE_ARROW = 1;				| Bow ammo | Used for safety checks
+CONSUMABLE_TYPE_BOLT = 2;				| XBow ammo | Used for safety checks	
+CONSUMABLE_TYPE_FLINT_SHOT = 3;			| Pistol ammo | Used for safety checks
+CONSUMABLE_TYPE_SMG_BULLET = 4; 		| Not used
+CONSUMABLE_TYPE_REVOLVER_BULLET = 5;	| Not used
+CONSUMABLE_TYPE_SHOTGUN_SHELL = 6;		| Not used
+	
+------------------------------------------------------------------------------------------------------------------------------------------
+Subtypes
+
+Extra subtypes for safety checks and internal structures. Used for magics as well.
+
+CONSUMABLE_SUB_DEFAULT = 0				| Anything not below
+CONSUMABLE_SUB_DRINK = 1				| Any buffing or self effect (heals, weapon enchants, other buffs)
+CONSUMABLE_SUB_THROW = 2				| Any throwing weapon
+CONSUMABLE_SUB_AMMO = 3					| Any ammo | Safety check -> only ammo can be consumed by weapons
+CONSUMABLE_SUB_INCANT = 4				| Any Incantation or Prayer (Non-spell magics)
+CONSUMABLE_SUB_BARRAGE = 5				| Any Barrage spell | Safety check and special rules
+
+------------------------------------------------------------------------------------------------------------------------------------------
+MissileName
+
+There is a new data file missiles.sjson. This links a missile from there to the activated magic/consumable.
+This is used for every attacking spell and thrown item. Base damage for missiles are locked to the missile.
+Scaling comes from the magic or consumable used however.
+------------------------------------------------------------------------------------------------------------------------------------------
+AmmoDamage 
+Ammo does not use MissileName and calculates as a bonus to base Ranged damage. 
+This means the Weapon scaling applies to the ammo. Changing final damage a bit.
+------------------------------------------------------------------------------------------------------------------------------------------

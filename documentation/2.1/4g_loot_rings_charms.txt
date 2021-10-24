@@ -1,0 +1,25 @@
+Salt and Sanctuary: Desalinated 2.1.0+
+by Zephyr Greene
+
+
+
+Rings, Charms, and Runes (Brands)
+
+------------------------------------------------------------------------------------------------------------------------------------------
+This doc file is describing the structure of rings.sjson.
+
+
+Type 			| 0 = Ring | 1 = Charm | 2 = Rune
+Flags 			| Shouldn't matter, anymore. Used on Export, not import.
+Name 			| Internal name.
+Title			| Display name by localization (language)
+Desc			| Displayed description by localization.
+Img				| UI image file. 
+LootAffixes		| Attach special effects here. See Affix documentation.
+CosmeticIcon	| Extra Texture. Used for items you wear or hold. (Charms, throwing knives, etc)
+GoldValue		| Base gold value.
+
+Category 		| Should always be 3.
+------------------------------------------------------------------------------------------------------------------------------------------
+
+Runes exist in this file. Flags control which rune is which.

@@ -1,0 +1,83 @@
+Salt and Sanctuary: Desalinated
+Last Updated for 3.0.0
+by Zephyr Greene
+
+Affixes -- Equations & Keywords
+------------------------------------------------------------------------------------------------------------------------------------------
+This is where the possibilities get fun!
+
+The Value field in Loot Affixes allows for equations.
+There are also keywords to reference the player's stats or weapon types.
+
+------------------------------------------------------------------------------------------------------------------------------------------
+Stat Keywords
+
+lvl = level							xhp = current hp (x marks the spot)
+str = strength						hp = max hp (ignores wounds)
+end = endurance						xmp = current mp (focus)
+dex = dexterity						mp = max mp
+will = willpower					xsp = current stamina
+mag = magic							sp = max stamina (ignores fatigue)
+wis = wisdom						fat = fatigue (focus spent or lost is fatigue)
+wds = wounds (max hp lost)			cpt = corruption (caused by Blood Vial potion/other)
+eqp = equipment %					softcap = stats softcap (set by CharSheet.scalingRules.Stats_Softcap)		
+
+------------------------------------------------------------------------------------------------------------------------------------------
+Weapon Checks
+
+These evaluate to true or false based on your currently active weapon loadout.
+names with "class" at the end of the include all weapon types from vanilla skillnodes.
+
+sword_class 						spear_class
+berserk_class						macefighter_class
+whip_class							marksman_class
+
+fists = unarmed						twohanded = current weapongrip, not weapon type
+shields = all shields
+greatweap = great-swords, -scissors, -hammers, -axes		
+ 
+staff								wand
+pistol								crossbow
+whipsword							chainwhip
+longsword							scissor
+greatsword							greataxe
+gunblade							dagger
+spear								halberd
+poleaxe								oar
+sword								axe
+bow									hammer (one handed maces)
+whip
+
+Now including brands! Evaluates True while owning the given brand.
+
+flip								dash
+djump								wall
+red									blue
+
+------------------------------------------------------------------------------------------------------------------------------------------
+Boolean Operators 
+These are allowed operators for comparison
+Parenthesis are also allowed ()
+
+<							>
+<=							>=
+=							<> (not equal)
+AND							OR
+
+------------------------------------------------------------------------------------------------------------------------------------------
+Examples
+
+Example 1 -- Potions
+A healing potion heals for "hp*1.0" which means 100% of your max hp.
+
+Example 2 -- Conditional Effects
+Redhair charm uses this feature.
+This would use "MULT_ALL_TYPE_ATK" to increase damage,
+with the Value of "xhp < 0.25*hp ? 0.50 : 0"
+Grants 50% attack damage while current hp is less than 25% of max hp and +0% otherwise.
+
+Example 3 -- Weapon Checking
+Twinmetal Ring / Juzu-udewa both use this for fist damage boost.
+Using the affix: MULT_MELEE_ATK_DAM
+with the Value "fists ? 0.5 : 0"
+Grants +50% damage while only having fists for a weapon and +0% otherwise.

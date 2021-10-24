@@ -1,0 +1,79 @@
+Salt and Sanctuary: Desalinated
+Last Updated for 2.1.5+
+by Zephyr Greene
+
+
+Rules
+The rules.sjson file allows you to turn certain functionality On/Off and control global gameplay values.
+
+Feel free to ignore this file unless you want to dig deep.
+
+------------------------------------------------------------------------------------------------------------------------------------------
+Booleans 
+
+ShareRareLootAndKeys | When playing co-op both players can get keys and high tier loot drops at the same time
+UniqueRings_On | Copies of the same ring will not work. Only the first. | This is how the base game worked.
+UseHighestAffixVal_On | Uses the highest value for each Affix on the player | This uses absolute value to determine highest value
+StaticMPCosts_On | Make mana costs not use the any cost formulas from the base game. | See also formulas.sjson
+WeaponUpgrades_On | Turns off the ability to upgrade weapons | Weapons already upgraded ignore upgrade bonuses and do not display their rank
+ArmorUpgrades_On | Turns off the ability to upgrade armors | same thing
+ShieldUpgrades_On | Turns off the ability to upgrade shields | you get the idea
+ClassNodesGiveStats_On | Turns off the attribute bonuses from Class nodes that grant weapon tiers | Note: Affixes can be used for dynamic bonuses 
+BlockDamToStamina_On | Changes how blocking with your shield works | All blocked damage removes stamina instead of life
+AdditiveShieldDefense_On | Changes how damage is calculated with your shield | Off = uses % damage reduction | On = uses additive defense to armors
+AllowNegativeStamina_On | Over using stamina actually makes it negative and takes extra time to regen | Off = Stamina use stops at 0
+SpecialRequestKickFlipDart_On | Allows you to use the dash-jump (Dart Brand) out of the Kickflip (dagger) and Uppercut (fists)
+TriResourceStats_On | An idea only partially implemented, still possible to use. | See TriResources in Tutorials or ignore this entirely. 
+
+------------------------------------------------------------------------------------------------------------------------------------------
+Background Stuff
+
+RedPotionBase_Val | How many starting Red Flasks you have (all classes) 
+BluePotionBase_Val | How many starting Blue Flasks you have (all classes)
+CreedItemOneBase_Val | How many starting (free) Creed items you have | Slot1
+CreedItemTwoBase_Val | How many starting (free) Creedit items you have | Slot2
+SanctuaryBonus_Val | Multiplier for having a Statue/NPC at your current sanctuary
+StatSoftCap_Val | Damage stats softcap value | Default is 50
+SpellScaling_Val | Ratio for Spell scaling | Default is 0.2 (1/50)
+WeaponScaling_Val | Ratio for Weapon Scaling | Default is 0.2 (1/50)
+EnemyAtkVariance_Val | Allows enemy damage to vary by a percentage | +/- X%
+PlayerRunSpeedBase_Val | Default player running speed is 500
+PlayerSpeedEquipFactor_Val | Default equipment factor is 150 | At 50% equipment load: 500 - (150 * 0.5) = 425
+ChargeAtkDam_Val | Base damage% of a full melee charge attack
+ChargeAtkStam_Val | Base stamina% increase of a full melee charge attack
+RollStaminaCost_Val | Base stamina cost of the dodge roll
+JumpStaminaCost_Val | Base stamina cost of the jump action
+JumpBlockStaminaCost_Val | Base stamina cost of jumping with a shield held up
+DartStaminaCost_Val | Base stamina ost of dash-jump (dart brand) 
+BlockStaminaCost_Val | Base stamina cost of each hit against your shield | blocking only, not parrying
+BlockStaminaRatio_Val | Base multiplier of damage to stamina when blocking (poise/balance)
+BlockStaminaRegenRatio | Your stamina regen ratio when holding up your shield
+DamageToWoundsRatio_Val | Damage to Wounds Ratio | Default 10%
+MaxWoundingRatio_Val | Max wounds ratioto health | Default 50% cut to max health
+StaminaToFatigueRatio_Val | How much Fatigue is generated per point of stamina used | Default is 0.0025 (1/400)
+MaxFatigueRatio_Val = | Max fatigue ratio to stamina | default is 50% cut to stamina
+CharStaggerDurationRatio_Val | How long a hit recovery (stagger) plays for (all players and monsters) | increasing duration also increases distance
+CharStaggerKnockbackRatio_Val | How far back a target is pushed during hit recovery animation (stagger)
+DefiledBonusDamRatio_Val | How much bonus damage Defiled Flask causes (Buff Bloodied) | Default 0.25 (+25%)
+BloodiedResistRatio_Val | Multiplier for when a character uses blood magic or is hit by defiled flask (Buff Bloodied) | Default 0.0 (all defense 0%)
+
+------------------------------------------------------------------------------------------------------------------------------------------
+Elemental Stuff
+
+PoisonBaseBuildup_Val | Base value per hit builds up before popping poison | Default 1.0, +0.5 per poison effect (affixes)
+						| Set this to a large number (40+ or so) for poison to always pop instantly (this includes against players)
+PoisonBurstDamRatio_Val | How much damage poison does on hit | Default 0%
+PoisonDotRatio_Val | How much damage poison does over time | Default 200%
+PoisonDuration_Val | How long poison lasts | Default 20 seconds
+FireBurstDamRatio_Val | How much damage fire does on hit | Default 75%
+FireDotRatio_Val | How much damage fire DoT deals over time | default 25%
+FireDotDuration_Val | How long fire DoT lasts | 
+FireBonuseWoundsRatio_Val | Extra wounds from fire damage | Default 2.5%
+LitBurstDamRatio_Val | How much damage lightning does on hit | Default 75%
+LitDotRatio_Val | How much damage lightning does over time | default 25%
+LitDotDuration_Val | How long lightning lasts | default 0.25
+LitDrainStaminaRatio_Val | Stamina reduced from lightning damage | Default is 5% but it's not noticeable
+ArcaneBurstDamRatio | How much damage arcane does on hit | Default 100% 
+ArcaneDotRatio | How much damage arcane does over time | Default 0%
+ArcaneDotDuration | How long arcane DoT lasts | NEW! Arcane can act like fire/lightning with DoT ratio if you want it.
+ArcaneGenFatigueRatio | Fatigue can be caused from Arcane damage | Default 0% 
