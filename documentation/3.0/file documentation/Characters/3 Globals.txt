@@ -1,5 +1,75 @@
-There's nothing here yet.
+Salt and Sanctuary: Desalinated
+Last Updated for 3.0.0
+by Zephyr Greene
 
-This covers the globals.sjson file.
+
+
+
+
+Globals
 
 Settings in this data file affect both players and enemies, unless otherwise stated.
+
+------------------------------------------------------------------------------------------------------------------------------------------
+Damage Rules
+
+UsePlayerWeaponVariance			= Rolls weapon damage between min and max damage. If off only uses Max damage
+									UI damage also doesn't show min damage if off.
+UseEnemyDamageVariance			= Rolls all enemy damage with a +/- variance.
+EnemyAtkVariance_Val			= The value used for enemies if variance is turned on.
+BuffsIgnoreBlock				= Blocking doesn't stop damage buffs and effects. Default On.
+
+------------------------------------------------------------------------------------------------------------------------------------------
+Defense Rules
+
+ArmorDefenseDivisor				= Damage reduction is calculated using this value. Ex. Armor / (Armor + Divisor). Default 200
+ArmorPoiseDivisor				= Stagger reduction is calculated using this value. Ex. Stagger / (Stagger + Divisor). Default 40
+
+------------------------------------------------------------------------------------------------------------------------------------------
+Stagger Monster Rules
+
+Stagger_EnemyPoiseBreakResetRatio	= Multiplier for extra poise after a stagger. Default 1.0 (unused)
+Stagger_EnemyPoiseResetDecayTime	= The time in seconds it takes for the above extra poise to return to normal.
+Stagger_EnemyDurationRatio			= Ratio of duration of monster stagger.
+Stagger_EnemyKnockbackRatio			= Ratio of distance pushed duration stagger.
+
+------------------------------------------------------------------------------------------------------------------------------------------
+Defiled Flask
+
+DefiledBonusDamageRatio				= The amplified damamage from defiled flask. Default +25%
+DefiledResistFactor					= The percentage of all resists while afflicted with defiled flask (or bloodied from blood magic).
+										Default is 0, setting target's resists to 0. Doesn't include Holy Resist.
+										
+------------------------------------------------------------------------------------------------------------------------------------------
+Poison Damage Rules					
+
+Poison damage uses a buildup value before triggering damage. 
+Poison damage is pooled (totaled) and ticks away whether or not poison has been popped.
+
+PoisonBaseBuildup_Val				= Base buildup. Default is 1.0 for players and monsters.
+PoisonBurstDamRatio_Val				= New mechanic. Ratio of poison damage dealt instantly. Default 0%
+PoisonDotRatio_Val					= Ratio of poison damage dealt over time. Default 2.0 or double the face value.
+PoisonDuration_Val					= Duration in seconds that poison lasts, popped or not. 
+
+------------------------------------------------------------------------------------------------------------------------------------------
+Fire Damage Rules
+
+FireBurstDamRatio_Val			 	= Ratio of damage dealt instantly. Default 75%
+FireDotRatio_Val					= Ratio of damage dealt over time. Default 25%
+FireDotDuration_Val					= Duration of burning damage.
+FireBonusWoundsRatio_Val			= Increased wounding as a percent of damage taken. Default +2.5% wounding.			
+
+------------------------------------------------------------------------------------------------------------------------------------------
+Lightning Damage Rules
+
+LitBurstDamRatio_Val				= Ratio of damage dealt instantly. Default 75%
+LitDotRatio_Val						= Ratio of damage dealt over time. Default 25%				
+LitDotDuration_Val					= Duration of shock damage.
+LitDrainStaminaRatio_Val			= Stamina drain from lightning damage. Default 5%. Default is not noticeable.
+  
+------------------------------------------------------------------------------------------------------------------------------------------ 
+ArcaneBurstDamRatio					= Ratio of damage dealt instantly. Default 100%
+ArcaneDotRatio						= New Mechanic. Ratio of damage dealt over time. Default 0%
+ArcaneDotDuration					= New Mechanic. Duration of arcane curse damage.
+ArcaneAddFatigueRatio				= New Mechanic. Fatigue drain from arcane damage. Default 0%.
+------------------------------------------------------------------------------------------------------------------------------------------

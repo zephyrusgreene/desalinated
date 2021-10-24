@@ -171,9 +171,9 @@ Respawn_DefaultLocation				= An x,y coordinate on the world map, while no claime
 ------------------------------------------------------------------------------------------------------------------------------------------
 FallDamage
 
-fall_Pain			= base fall damage. default 25% 
-fall_LedgePain		= base fall damage when grabbing a ledge after a large fall. default 49%
-fall_GreaterPain	= base fall damage after a large fall. default 49%
+fall_Pain			= base fall damage. default 25% of max HP
+fall_LedgePain		= base fall damage when grabbing a ledge after a large fall. default 49% of max HP
+fall_GreaterPain	= base fall damage after a large fall. default 49% of max HP
 fall_DeathAltPain	= requires affix effect. If affix present player isn't instantly killed and takes this fall damage instead.
 
 ------------------------------------------------------------------------------------------------------------------------------------------
