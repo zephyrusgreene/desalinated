@@ -9,3 +9,7 @@ This is a basic overview of the modconfig.ini file
 Desalinated now uses this file in the background.
 It stores your last used mods, maps, and settings when booting and exporting.
 ------------------------------------------------------------------------------------------------------------------------------------------
+
+If you decide "not show this popup" on the Modloader (Windows Form),
+you can turn it back on in here.
+------------------------------------------------------------------------------------------------------------------------------------------
