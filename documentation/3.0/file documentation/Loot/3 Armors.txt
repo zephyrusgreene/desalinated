@@ -1,0 +1,58 @@
+Salt and Sanctuary: Desalinated
+
+NOTHING HERE YET (NOT UPDATED)
+
+by Zephyr Greene
+
+
+
+Armors, do people even use these
+
+------------------------------------------------------------------------------------------------------------------------------------------
+This doc file is describing the structure of armors.sjson.
+
+Type				| Denotes the type by integer | Functions on a per category basis.
+Upgrade 			| Controls category of items for upgrading.
+UpgradeFac  		| Value multiplier per rank | 1.10 = 10% | Rank 7 = 1.10^7
+Name 				| Internal name | Also used for referencing items/other in data files.
+Title				| Display name based on localization (language settings)
+Desc				| In game description based on localization.
+Img					| Inventory image.
+Texture				| Visual texture used for item while equipped.
+Flags 				| Used for cosmetic alterations.
+Weight 				| Weight of the item. How much Equip/Load it consumes.
+ArmorDefense 		| Defense per damage type from the item.
+LootAffixes 		| List/Collection of Affixes attached to the item.
+IsHeavyArmor 		| True = Counts as heavy armor | False = Light armor
+EquipReqs			| Levels for primary and secondary requirements. (levels only not item classes)
+UpgradePath			| Items used to transmute this item.
+GoldValue			| How much gold the item costs
+
+Category 			| Deprecated. Newer versions won't export this variable
+TexIdx 				| Deprecated. Newer versions won't export this variable
+TexIdx2				| Deprecated. Newer versions won't export this variable
+
+------------------------------------------------------------------------------------------------------------------------------------------
+Armor Types
+
+ARMOR_TYPE_HELM = 0
+ARMOR_TYPE_ARMOR = 1
+ARMOR_TYPE_GLOVES = 2
+ARMOR_TYPE_BOOTS = 3
+
+------------------------------------------------------------------------------------------------------------------------------------------
+Flags
+
+I would suggest never touching these.
+
+ARMOR_FLAGS_NONE = 0												ARMOR_FLAGS_COAT = 9
+ARMOR_FLAGS_ROBES = 1												ARMOR_FLAGS_COAT_FEM2 = 10
+ARMOR_FLAGS_MASK_HELM = 2											ARMOR_FLAGS_HAT = 11
+ARMOR_FLAGS_FEM2 = 3												ARMOR_FLAGS_COAT_SURCOAT = 12
+ARMOR_FLAGS_BEARD_COVER_HELM = 4									ARMOR_FLAGS_COAT_SURCOAT_FEM2 = 13
+ARMOR_FLAGS_CAPE = 5												ARMOR_FLAGS_CAPE_SURCOAT = 14
+ARMOR_FLAGS_CAPE_FEM2 = 6											ARMOR_FLAGS_CAPE_SURCOAT_FEM2 = 15
+ARMOR_FLAGS_SCARF = 7												ARMOR_FLAGS_ROBES_FEM2 = 16
+ARMOR_FLAGS_SCARF_FEM2 = 8
+
+------------------------------------------------------------------------------------------------------------------------------------------
