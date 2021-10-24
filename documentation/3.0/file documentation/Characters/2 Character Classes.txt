@@ -1,0 +1,58 @@
+Salt and Sanctuary: Desalinated
+Last Updated For 3.0.0
+by Zephyr Greene
+
+
+
+
+Character Classes
+
+You can now modify starting class items and a few other things here!
+
+Warning: You can glitch the game in unique ways by putting items in the wrong slots. 
+			This could crash your game or break your saves or worse. Be cautious.
+			
+All items and skills linked here use the internal name such as "mage_gloves".
+
+------------------------------------------------------------------------------------------------------------------------------------------
+title				| List of localized class name (translations)
+
+------------------------------------------------------------------------------------------------------------------------------------------
+weaponLoadout		
+
+The two loadouts. First grouping is the leftside of the player inventory.
+
+mainhand			| mainhand weapon name. Defaults to twohanded grip if offhand slot is empty.
+offhand				| offhand weapon, Bow ammo1, Staff spell1, or gunblade ammo1
+charm				| charm, Bow ammo2, Staff spell2, or offhand ammo1
+
+------------------------------------------------------------------------------------------------------------------------------------------
+armorSlots
+
+Cosmetic slots are not shown here, but are defaulted to your character's starting gear.
+
+helm 				| the name of the currently equipped helm
+armor 				| the name of the currently equipped chestpiece
+gloves 				| the name of the currently equipped gloves
+boots 				| the name of the currently equipped boots
+
+------------------------------------------------------------------------------------------------------------------------------------------
+Quick Use Bars
+
+Maximum 6 items in each hotbar.
+
+consumable 			| list of all active consumables, hotbar 1. | Using /number will give extras | ex "grenado/8" will give 8.
+incantation 		| list of all active incantations, hotbar 2.
+
+------------------------------------------------------------------------------------------------------------------------------------------
+Rings
+
+ringSlots			| list of rings equipped left to right.
+
+------------------------------------------------------------------------------------------------------------------------------------------
+Skills
+
+startingSkill 		| The two skills that you start with. | Can use "none" for no skill
+startingLevel 		| starting level of character | Originally used for increasing level when using starting skills.
+
+------------------------------------------------------------------------------------------------------------------------------------------

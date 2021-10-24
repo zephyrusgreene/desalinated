@@ -1,0 +1,143 @@
+Salt and Sanctuary: Desalinated
+Last Updated for 3.0.0
+by Zephyr Greene
+
+
+
+
+Character Sheet
+
+In this file you can modify various rules and stats for players in your mod.
+I have designed this file to group related values together for ease of use.
+
+------------------------------------------------------------------------------------------------------------------------------------------
+CharStats
+
+strength 		= Starting strength
+dexterity 		= Starting dexterity
+magic	 		= Starting magic
+endurance 		= Starting endurance
+willpower 		= Starting willpower
+wisdom	 		= Starting wisdom
+
+health 			= Base HP
+focus			= Base MP
+stamina			= Base SP
+equipload		= Base weight capacity
+droprate		= Base item drop rate
+
+maxlevel		= Max player level | Warning: can crash game if savefile exceeds max
+
+------------------------------------------------------------------------------------------------------------------------------------------
+StatScaling
+
+Stats_Softcap			= Max points into stats before diminished return kicks in
+Stats_SoftcapRatio		= Value ratio after softcap | Used for damage stats
+Stats_SoftercapRatio	= A secondary value ratio	| Used for other stats
+healthPerLevel			= HP player gains on level up 
+defensePerLevel			= Defense to all damage types per level | Excludes staggerDef
+focusPerWill			= MP per willpower
+staminaPerWill			= SP per willpower
+dropratePerWill			= Item find value per willpower
+loadPerEnd				= Equip load value per endurance
+
+BuffAffixBonusesAreMultiplicative 	= Buff Affixes with the word "MULT" are multiplied when tallied
+SkillAffixBonusesAreMultiplicative 	= Skill Affixes with "MULT" are multiplied when tallied
+CharAffixBonusesAreMultiplicative	= Affixes at the bottom of CharSheet are multiplied when tallied
+
+Items you equip are always their own grouping. If all of these are set to false, then 
+Skill Affixes, Char Affixes, Buff Affixes, and Item Affixes are additive.
+
+Example 1
+If all are false
++10% damage in each category [4] would be 10% + 10% + 10% + 10% = 40% 
+
+Example 2
+If all are true
++10% damage in each category [4] would be (1 + 10%) * (1 + 10%) * (1 + 10%) * (1 + 10%) - 1 = 46.4%
+
+------------------------------------------------------------------------------------------------------------------------------------------
+Sanctuary
+
+Potion slots are not required to be potions.
+
+redpotions		= starting number of HP potions | slot 1
+bluepotions		= starting number of MP potions | slot 2
+creeditemone	= starting number of creed item | slot 3
+creeditemtwo	= starting number of creed item | slot 4
+NPCSanctuaryMultiplier = bonus factor from statues offered | default is +10% 
+
+------------------------------------------------------------------------------------------------------------------------------------------
+Items
+
+RingsDontStack					= Rings act as unique and cannot be duplicated | checked by internal name
+Coop_RareLootAndKeysShared 		= Keys and epic crafting materials are shared with secondary player
+FocusCostsAreStatic				= Turns off all weight-based focus cost formulas for all magics & prayers
+DisableTwohandStrengthBoost 	= Turns off original game's twohanded strength bonus
+DisableTwohandStrengthBoost 	= Turns off original game's twohanded stagger bonus
+InactiveLoadoutCostsEquipLoad	= Adds secondary loadout weight at all times | Ignores items with same name in both loadouts
+
+------------------------------------------------------------------------------------------------------------------------------------------
+Upgrades
+
+Toggling any of these upgrades off will disable upgrade calculations
+and also disables menus to select items for upgrades.
+
+WeaponUpgradesEnabled		= Weapons can be upgraded at the blacksmith
+ArmorUpgradesEnabled		= Armors can be upgraded at the blacksmith
+ShieldUpgradesEnabled		= Shields can be upgraded at the blacksmith
+MaxItemRank					= Max Rank allowed | If you increase max rank, update this file or you will crash
+							   "/loot/helpers/lootupgrades.sjson"
+							   
+------------------------------------------------------------------------------------------------------------------------------------------
+SkillTree
+
+ClassSkillsGiveStats	= If disabled, item skills not longer provide stats
+
+------------------------------------------------------------------------------------------------------------------------------------------
+Blocking
+
+I've added few different settings to blocking that are used in the Demo mod.
+
+BlockDamageAbsorbedByStamina		= Alternative block system. Both Stagger and combat damage are absorbed by player stamina.
+BlockStaminaOverflowRatio			= Alternative block system. If stamina reaches 0, reduces HP by remainder of damage multiplied by this.
+ShieldAddsDefense					= Alternative block system. Shields no longer grant a % defense value. Acts like extra armor while blocking.
+BlockIsDirectional					= Players must face the direction of the hit to block damage.
+ArmorBenefitsBlock					= Default block system. Combat damage and stagger is reduced by equipped gear after shield block.
+BlockBaseStamina					= A minimum stamina cost on every blocked hit. Default is 0.
+BlockStaggerStaminaMultiplier		= Default block system. Used to amplify reductions to stamina while blocking. Default is x2.
+BlockStaminaRegenPause				= Default block system. Time in seconds before stamina starts regenerating after blocking a hit.
+										Regen Pause dgdfg
+------------------------------------------------------------------------------------------------------------------------------------------
+Stamina
+
+Regen						= Base SP per second
+Regen_EquipFactor			= SP per second lost at 100% equip load
+Regen_BlockMultipler		= SP per second ratio while holding block | 18.75% total regen while blocking
+Regen_PauseFactor			= Shifts the timer of all Stamin_Freeze effects by this value
+Cost_DodgeRoll				= Base Stamina cost of dodgeroll
+Cost_Jump					= Base stamina cost of jump
+Cost_BlockJump				= Base stamina cost of jump while blocking
+Cost_DartBrand				= Base cost of dart brand
+
+StaminaCanGoNegative		= Turning this off could make some actions abusable | Original game allows negative stamina.
+
+------------------------------------------------------------------------------------------------------------------------------------------
+Mobility
+
+
+------------------------------------------------------------------------------------------------------------------------------------------
+ChargeAttacks
+------------------------------------------------------------------------------------------------------------------------------------------
+WoundsAndFatigue
+
+------------------------------------------------------------------------------------------------------------------------------------------
+Stagger
+------------------------------------------------------------------------------------------------------------------------------------------
+DeathRespawn
+------------------------------------------------------------------------------------------------------------------------------------------
+FallDamage
+------------------------------------------------------------------------------------------------------------------------------------------
+CharAffixes
+
+------------------------------------------------------------------------------------------------------------------------------------------
