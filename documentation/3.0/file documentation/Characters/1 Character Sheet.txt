@@ -26,7 +26,7 @@ stamina			= Base SP
 equipload		= Base weight capacity
 droprate		= Base item drop rate
 
-maxlevel		= Max player level | Warning: can crash game if savefile exceeds max
+maxlevel		= Max player level | Warning: can crash game (if savefile exceeds max)
 
 ------------------------------------------------------------------------------------------------------------------------------------------
 StatScaling
@@ -59,7 +59,8 @@ If all are true
 ------------------------------------------------------------------------------------------------------------------------------------------
 Sanctuary
 
-Potion slots are not required to be potions.
+Creed items are controlled in creeditems.sjson.
+Items must be consumables, but do not need to be potions in potion slots.
 
 redpotions		= starting number of HP potions | slot 1
 bluepotions		= starting number of MP potions | slot 2
@@ -125,19 +126,60 @@ StaminaCanGoNegative		= Turning this off could make some actions abusable | Orig
 ------------------------------------------------------------------------------------------------------------------------------------------
 Mobility
 
+RunSpeed_BaseSpeed					= Distance per second moved when running. Default 500
+RunSpeed_EquipFactor				= Runspeed reduction at 100% equip weight.
+DartBrandFrom_Kickflip_Uppercut 	= Allows airdash after fist upper or dagger kickflip.
 
 ------------------------------------------------------------------------------------------------------------------------------------------
 ChargeAttacks
+
+Melee_DamageRatio					= Damage ratio when fully charged. Default 1.25 (+25%)
+Melee_StaminaRatio					= Stamina ratio when fully charged. Default 1.25
+Melee_StaggerRatio					= Stagger damage ratio when fully charged. Default 1.25
+Melee_StaggerBonus					= Added stagger (after StaggerRatio) when fully charged.
+Melee_ShieldBreakerBonus			= Added stagger (after StaggerRatio) only against blocking players or enemies.
+Bow_BowsUseChargeup					= New mechanic. Allows bows to increase damage like melee chargeup.
+Bow_DamageRatio						= New mechanic.	Damage ratio for bow chargeup. Demo mod uses 2.0.
+Bow_ArrowDistanceRatio 				= New mechanic. Arrow speed (effective distance) ratio based on full charge up.
+Bow_BowAimDuration					= New mechanic. How long bow full charge up takes in seconds (after initial windup).
+
 ------------------------------------------------------------------------------------------------------------------------------------------
 WoundsAndFatigue
 
+Wounds_DamageRatio					= Percentage of damage that is added to wounds - limited max HP.
+Wounds_MaximumHP					= Percentage of max HP at which wounding maxes out.
+Fatigue_StaminaRatio				= Percentage of stamina spent that becomes Fatigue.
+Fatigue_MaxSP						= Percentage of max SP at which the fatigue bar maxes out.
+
 ------------------------------------------------------------------------------------------------------------------------------------------
 Stagger
+
+Stagger_DurationRatio				= Ratio of original time spent in soft-stagger animation.
+Stagger_KnockbackRatio				= Ratio of original distance pushed when soft-staggered.
+Stagger_BigHitPoiseRatio			= New mechanic. Ratio of reduction on hits that fling you based on armor balance.
+Stagger_BigHitWeightRatio			= New mechanic. Ratio of reduction on hits that fling you based on player weight.
+
+	-- Big hit ratios take the best value. If left at 0 it does nothing.
+
 ------------------------------------------------------------------------------------------------------------------------------------------
 DeathRespawn
+
+Death_GoldLossRatio					= How much gold is lost on death. Default 10%
+Respawn_StartingLocation			= An x,y coordinate on the world map. Default is the boat.
+Respawn_DefaultLocation				= An x,y coordinate on the world map, while no claimed sanctuary. Default is the shore.
+
 ------------------------------------------------------------------------------------------------------------------------------------------
 FallDamage
+
+fall_Pain			= base fall damage. default 25% 
+fall_LedgePain		= base fall damage when grabbing a ledge after a large fall. default 49%
+fall_GreaterPain	= base fall damage after a large fall. default 49%
+fall_DeathAltPain	= requires affix effect. If affix present player isn't instantly killed and takes this fall damage instead.
+
 ------------------------------------------------------------------------------------------------------------------------------------------
 CharAffixes
+
+Allows the player to have default item effects.
+See Affix documentation for more information.
 
 ------------------------------------------------------------------------------------------------------------------------------------------
