@@ -1,85 +1,75 @@
 Salt and Sanctuary: Desalinated
-
-NOTHING HERE YET (NOT UPDATED)
-
+Last Updated for 3.0.0
 by Zephyrus Greene
+
+
+
+
 
 
 Loot Overview
 
 ------------------------------------------------------------------------------------------------------------------------------------------
-Intro
-
 The original reason the mod was made -- better, cooler, and more interesting loot!
 If you haven't already, be sure to read the Affix documentation.
 
-------------------------------------------------------------------------------------------------------------------------------------------
-Overview
+In the original game all loot items were in one large binary file.
+Loot is now broken down by category in multiple files: Weapons, Magics, Armors, Shields, Consumables, etc.
+This framework grants the user a significant amount of customization and control over the character, rules, damages, and items. 
 
-In the original game all loot items were in one large binary file. The game was not intended to be modified, but someone built a tool to 
-transform that data from binary to xml and then back again. Many balance mods used that feature. It is no longer necessary in this mod to 
-constantly export and import. This mod (framework) grants the user a significant amount of customization and control over the character, 
-rules, damages, and items. 
-
-Note that some things will work differently than the original game as major structures have either been rebuilt 
-or are brand new system entirely.
-
-DO NOT delete anything that exists! Modify it, remove it from the world, but just don't delete.
+Do not delete or rearrange any entries that exist!
+Modify it, remove it from the world, but just don't delete any.
 
 ------------------------------------------------------------------------------------------------------------------------------------------
 Loot Fields
 
-The binary loot file has been broken into distinct files now: Weapons, Magics, Armors, Shields, Consumables, etc. Each loot item has the 
-same fields, but they do not all use those fields. To remove clutter, unused fields are hidden in these files. 
+Each loot item contains all the same fields whether its a key or a weapon.
+To remove clutter, unused fields are not present in files that do not use them.
 
-In this overview I will list ALL the fields and describe them. In individual category files, I will describe them for that category only.
-
-Category 			| Originally used to separate the groups, now used further for each file. (Don't change these)
-Type				| Denotes the type by integer | Functions on a per category basis.
-Upgrade 			| Controls category of items for upgrading.
-UpgradeFac  		| Value multiplier per rank | 1.10 = 10% | Rank 7 = 1.10^7
-Name 				| Internal name | Also used for referencing items/other in data files.
-Title				| Display name based on localization (language settings)
-Desc				| In game description based on localization.
-Img					| In game image file. | HUD and inventory only.
-Texture				| Visual texture used for item while equipped.
-Flags 				| Used for a few original affix-like effects and cosmetic alterations.
-Special 			| Preserved for a few original affix-like effects.
-Weight 				| Weight of the item. How much Equip/Load it consumes.
-WeaponDamage 		| Damage per damage type via a range. | "5,10" means random between 5-10 damage 
-ArmorDefense 		| Defense per damage type from the item.
-LootAffixes 		| List/Collection of Affixes attached to the item.
-Parry 				| How long the parry window lasts. Shields only. | Shorter = harder
-ParryAnim 			| Which Parry Animation the item uses. Shields only.
-WeaponShieldName 	| The name of the shield for values used when blocking.
-WeaponSpellStrength	| Acts as Base Weapon Damage for calculating Magic Damage.
-SpellType 			| Denotes original elemental type of magics. (Holy, Fire, Lightning)
-SpellBaseVal 		| Deprecated. Does nothing. 
-SpellFocusCost		| The base focus (mana) cost of Magics.
-SpellStaminaCost 	| The base stamina cost of Magics.
-SpellElemBal 		| The value of imbalance caused by magics. Also used for bloodmagic.
-SpellProjectileCount| Deprecated. Does nothing.
-IsHeavyArmor 		| True = Counts as heavy armor | False = Light armor
-MissileName 		| The name of a missile in missiles.sjson.
-ConsumeSubtype 		| Differentiates Throwing, Self-Buff, Ammo, Enchants and Barrage effects.
-ConsumeSound 		| The internal name of a sound. Triggers at beginning of use. | YMMV
-CosmeticIcon 		| Used for charm image (texture).
-ConsumeDepletes 	| Whether or not this item is reduced on usage. False = Infinite ammo, etc.
-StatScaling			| Scaling for each stat. Scaling now affects the base damage evenly.
-EquipReqs			| Levels for primary and secondary requirements. (levels only not item classes)
-SwooshColors		| Colors to use for melee attack overlay (arcing swoosh)
-UpgradePath			| Items used to transmute this item.
-GoldValue			| How much gold the item costs
-Durability			| Ignore this. Used for Torches and maybe more.
-TexIdx 				| Special texture 1. I wouldn't advise messing with these.
-TexIdx2				| Special texture 2. I wouldn't advise messing with these.
+In this overview I will list all the fields and describe them.
+Major fields will be further expanded afterwards.
 
 ------------------------------------------------------------------------------------------------------------------------------------------
-Upgrade Groups
-  
-UPGRADE_NORMAL = 0													UPGRADE_NONE = 3
-UPGRADE_KRAEKAN = 1													UPGRADE_BLUE_DROWNED = 4
-UPGRADE_RED_CARBON = 2												UPGRADE_BEASTLY = 5
+
+Title				| Display name based on localization (language settings)
+Descript			| In game description based on localization.
+Name 				| Item's internal name | Used for referencing items in data files.
+Type				| Item's type by name. Types are category dependent.
+UpgradeFactor  		| Value multiplier per rank | Where 1.10 = +10% | Rank 7 is 1.10^7 = +94.8%
+UpgradeType			| Upgrade type by group name. | See /helpers/lootupgrades.sjson
+InventoryImage		| In game image file. | HUD and inventory only.
+Texture				| Visual texture used for the item while worn. | CharmIcon
+CosmeticFlag		| Controls certain cosmetic properties on armors. | Weapons use it for CharmMove
+Weight 				| Weight of the item. How much Equip-Load it consumes.
+GoldCost			| How much gold the item costs.
+WeaponShieldLink 	| The name of the shield used by a weapon for blocking and parrying.
+WeaponSpellDamage	| Weapon's base damage for using spells. | Scales from physical stat scaling only.
+WeaponDamage 		| Damage per type. Uses comma separated values for min and max damage | "5,10" means 5-10 damage.
+ArmorDefense 		| Defense per type. | Damage reduction is calculated as Armor / (Armor + 200)
+StatScalingPhysical	| Physical stat scaling for weapon damage. | Now includes red color coding in game.
+StatScalingElemental| Elemental stat scaling for weapon damage. | Now includes purple color coding in game.
+LootAffixes 		| A list of Affixes attached to the item. | No significant limit on number of Affixes.
+ParryTime			| Duration during which attacks are parried. | A shorter timer makes parrying harder.
+ParryAnim 			| Name of animation used for Parry. | Defaults: "parry", "shieldsmash" | Battlestaff uses "hpdstrong"
+Requirements		| Levels and names of skills required to use item. | Class Ranks are purely for UI
+TransmutePath		| Items and salt required to craft this item at the alchemist NPC.
+SwooshColors		| Colors to use for melee attack overlay (arcing swoosh) | Contains 3 visual layers.
+SpellFocusCost		| The base mana (focus) cost of Magics.
+SpellStaminaCost 	| The base stamina cost of Magics.
+SpellElemBal 		| The value of imbalance caused by lightning and fire magics. | Also used for corruption from blood magic.
+IsHeavyArmor 		| True = Counts as heavy armor
+MissileName 		| The name of a missile in missiles.sjson.
+ConsumeSubtype 		| Differentiates Throwing, Self-Buff, Ammo, Enchants and Barrage effects.
+ConsumeDepletes 	| Whether or not this item is reduced on usage. False = Infinite ammo, etc.
+
+
+
+
+WIP below here
+
+
+------------------------------------------------------------------------------------------------------------------------------------------
+
 
 ------------------------------------------------------------------------------------------------------------------------------------------
 StatScaling
