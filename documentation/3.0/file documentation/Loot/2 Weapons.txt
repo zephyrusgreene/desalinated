@@ -1,45 +1,19 @@
 Salt and Sanctuary: Desalinated 
-
-NOTHING HERE YET (NOT UPDATED)
-
+Last Updated for 3.0.0
 by Zephyrus Greene
+
+
+
 
 
 
 Weapons, Weapons, Weapons
 
-This doc file describes the structure of weapons.sjson. 
-------------------------------------------------------------------------------------------------------------------------------------------
-------------------------------------------------------------------------------------------------------------------------------------------
-
-Title				| Display name based on localization (language settings)
-Descript			| In game description based on localization.
-Name 				| Internal name | Used for reference.
-Type 				| Weapon type as text.
-Upgrade 			| Controls category of items for upgrading.
-UpgradeFac  		| Value multiplier per rank | 1.10 = 10% | Rank 7 = 1.10^7
-Img					| Inventory image.
-Texture				| Visual texture used for item while equipped.
-Flags 				| Used for a few original affix-like effects and cosmetic alterations.
-Special 			| Preserved for a few original affix-like effects.
-Weight 				| Weight of the item. How much Equip/Load it consumes.
-WeaponDamage 		| Damage per damage type via a range. | "5,10" means random between 5-10 damage 
-LootAffixes 		| List/Collection of Affixes attached to the item.
-WeaponSpellStrength	| Acts as Base Weapon Damage for calculating Magic Damage.
-WeaponShieldName 	| The name of the shield for values used when blocking.
-StatScaling			| Scaling for each stat. Scaling now affects the base damage evenly.
-EquipReqs			| Levels for primary and secondary requirements. (levels only not item classes)
-SwooshColors		| Colors to use for melee attack overlay (arcing swoosh)
-UpgradePath			| Items used to transmute this item.
-GoldValue			| How much gold the item costs
-
-Category 			| Deprecated. Newer versions won't export this variable
-TexIdx 				| Deprecated. Newer versions won't export this variable
-TexIdx2				| Deprecated. Newer versions won't export this variable
-Type				| Deprecated and renamed. | Is now called weaponType and uses a type name.
-
+This doc file describes keywords and extra notes for weapons.sjson. 
 ------------------------------------------------------------------------------------------------------------------------------------------
 Weapon Types
+
+todo
 
 WEAP_TYPE_DAGGER = 0									WEAP_TYPE_WHIP = 11
 WEAP_TYPE_SWORD = 1										WEAP_TYPE_GREATAXE = 12  
@@ -54,15 +28,9 @@ WEAP_TYPE_CROSSBOW = 9									WEAP_TYPE_LONGSWORD = 20
 WEAP_TYPE_STAFF = 10									WEAP_TYPE_FISTS = 21		| Don't use
 
 ------------------------------------------------------------------------------------------------------------------------------------------
-Flags
+CharmMove
 
-WEAP_FLAG_NONE = 0										WEAP_FLAG_DARK = 6
-WEAP_FLAG_FIRE = 1 | Elemental Weapon particles			WEAP_FLAG_HP_LEECH = 7 		| No longer used | See Affixes
-WEAP_FLAG_LIT = 2										WEAP_FLAG_MP_LEECH = 8 		| No longer used | See Affixes
-WEAP_FLAG_POISON = 3									WEAP_FLAG_POISE = 9    		| No longer used | See Affixes
-WEAP_FLAG_FROST = 4										WEAP_FLAG_CHARM_MOVE = 10 	| Changes charm location
-WEAP_FLAG_HOLY = 5										WEAP_FLAG_CHARM_MOVE2 = 11 	| Changes charm location
-
+todo
 ------------------------------------------------------------------------------------------------------------------------------------------
 Specials
 
