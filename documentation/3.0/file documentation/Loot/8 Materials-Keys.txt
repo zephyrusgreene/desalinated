@@ -9,10 +9,20 @@ by Zephyr Greene
 
 Keys and Materials
 
-keys.sjson, materials.sjson
+This doc file describes keywords and extra notes for keys.sjson, materials.sjson
 ------------------------------------------------------------------------------------------------------------------------------------------
-There's not really any data changes from the base game here, nor are they recommended to be touched.
+Material Type
 
-You can try your hand at changing some ID's here and there. 
-It may break or mess up future saves. It also might not.
+This value is the original crafting tier of materials. Changing this doesn't do much.
+
+Material Id
+
+An internal identifier. Changing this will change how the item behaves.
+Not really worth changing. 
+
+------------------------------------------------------------------------------------------------------------------------------------------
+Keys
+
+Keys unlock scripted events (doors) by their presence in your inventory.
+
 ------------------------------------------------------------------------------------------------------------------------------------------
