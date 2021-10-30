@@ -1,87 +1,64 @@
-Salt and Sanctuary: Desalinated
-
-NOTHING HERE YET (NOT UPDATED)
-
-by Zephyr Greene
+Salt and Sanctuary: Desalinated 
+Last Updated for 3.0.0
+by Zephyrus Greene
 
 
 
-Magics, pew pew 
 
-------------------------------------------------------------------------------------------------------------------------------------------
-This doc file is describing the structure of magics.sjson.
 
-Type				| Denotes the type by integer | Functions on a per category basis.
-Name 				| Internal name | Also used for referencing items/other in data files.
-Title				| Display name based on localization (language settings)
-Desc				| In game description based on localization.
-Img					| In game image file. | HUD and inventory only.
-Texture				| Visual texture used for item while equipped.
-Flags 				| Originally used for IDs. Shouldn't matter anymore due to MissileName
-SpellType 			| Denotes original elemental type of magics.
-Special 			| Should be deprecated.
-MissileName 		| The name of a missile in missiles.sjson.
-SpellBaseVal 		| Deprecated. Does nothing. 
-SpellFocusCost		| The base focus (mana) cost of Magics.
-SpellStaminaCost 	| The base stamina cost of Magics.
-SpellElemBal 		| The value of imbalance caused by magics. Also used for bloodmagic debuff.
-SpellProjectileCount| Deprecated. Does nothing.
-ConsumeSubtype 		| Differentiates Throwing, Self-Buff, Ammo, Enchants and Barrage effects.
-ConsumeSound 		| The internal name of a sound. Triggers at beginning of use. | YMMV
-StatScaling			| NEW. Scaling for all magics is a default of 1.0 and follows original game scaling if not changed.
-EquipReqs			| Levels for primary and secondary requirements. (levels only, not item classes)
-GoldValue			| How much gold the item costs
 
-Category 			| Deprecated. Newer versions won't export this variable
-TexIdx 				| Deprecated. Newer versions won't export this variable
-TexIdx2				| Deprecated. Newer versions won't export this variable
+Magics - Pew pew pew
+
+This doc file describes keywords and extra notes for magics.sjson.
 
 ------------------------------------------------------------------------------------------------------------------------------------------
-Magic Type
+Item Type
 
-Controls where the magic can be equipped and which skill nodes it unlocks from.
+The type of an item or magic. Mostly controls the item slot it can be equipped into.
 
-TYPE_ELEMENTAL_SPELL = 0;
-TYPE_ELEMENTAL_INCANTATION = 1;
-TYPE_BLOOD_SPELL = 2;
-TYPE_BLOOD_INCANTATION = 3;
-TYPE_HOLY_SPELL = 4;
-TYPE_HOLY_INCANTATION = 5;
+QUICK_USE 
+THROW 
+LOB 
+AMMO_ARROW 
+AMMO_BOLT 
+AMMO_FLINTSHOT 
+ELEM_SPELL 
+ELEM_INCANT 
+PRAYER_SPELL 
+PRAYER_INCANT 
+BLOOD_SPELL 
+BLOOD_INCANT 
+HIDDEN = Item won't show up in menus after being picked up.
 
 ------------------------------------------------------------------------------------------------------------------------------------------
-SpellTypes (elemental flag)
+Action Effects
 
-Used for casting animations, elemental imbalance and the blood magic debuff.
+Also used for magics.
 
-SPELL_TYPE_NONE = 0;
-SPELL_TYPE_FIRE = 1;
-SPELL_TYPE_LIT = 2;
-SPELL_TYPE_BLOOD = 3;
-SPELL_TYPE_HOLY = 4;
+ICON_1 through ICON_9	= Symbol of a creed. The number is the id. Not all were used in the original game.
+SIP 					= Player will drink the item.
+CRUSH					= Player will crush the item.
+EAT						= Player will eat the item.
+RUB						= Player will rub the item.
+STOMP					= Player will stomp the item.
+CALLINGHORN				= Triggers travel menu.
+WILLHORN				= Player trumpets the item.
+BELLRETURN				= Triggers travel bell.
+EGGWRATH				= Triggers PvP.
+CRYSTALSPHERE			= Triggers sanctuary conversion.
+ENCHANT					= Player will buff their weapon.
+EXPUNGE_ENCHANT			= Player will buff their weapon or expunge a sanctuary.
+BOTTLE_MSG				= Triggers message menu.
+TORCH					= Is a torch.
+REVIVE					= Revives coop player.
+COOP_BELL				= Returns coop player to their world.
 	
 ------------------------------------------------------------------------------------------------------------------------------------------
-SpellElemBal
+Balance Type
 
-A positive value will either add to Fire Imbalance (2) or Bloodied debuff (10) if a blood magic.
-A negative value will add to Lightning Imbalance. (-2) Max imbalance for Fire/Lightning is +/- 10.
-Does nothing on Holy magics.
+Adds a buff to the player based on the balance type used. 
 
-------------------------------------------------------------------------------------------------------------------------------------------
-Subtypes (Magics use them too)
+NONE								BLOOD
+FIRE								LIT
 
-Extra subtypes for safety checks and internal structures. Used for magics as well.
-
-CONSUMABLE_SUB_DEFAULT = 0				| Anything not below
-CONSUMABLE_SUB_DRINK = 1				| Any buffing or self effect (heals, weapon enchants, other buffs)
-CONSUMABLE_SUB_THROW = 2				| Any throwing weapon
-CONSUMABLE_SUB_AMMO = 3					| Any ammo | Safety check -> only ammo can be consumed by weapons
-CONSUMABLE_SUB_INCANT = 4				| Any Incantation or Prayer (Non-spell magics)
-CONSUMABLE_SUB_BARRAGE = 5				| Any Barrage spell | Safety check and special rules
-
-------------------------------------------------------------------------------------------------------------------------------------------
-MissileName
-
-There is a new data file missiles.sjson. This links a missile from there to the activated magic/consumable.
-This is used for every attacking spell and thrown item. Base damage for missiles are locked to the missile.
-Scaling comes from the magic or consumable used however.
 ------------------------------------------------------------------------------------------------------------------------------------------
