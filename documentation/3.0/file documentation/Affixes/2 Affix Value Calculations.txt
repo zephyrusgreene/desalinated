@@ -27,7 +27,8 @@ mag = magic							sp = max stamina (ignores fatigue)
 wis = wisdom						fat = fatigue (focus spent or lost is fatigue)
 scalem = magic scaling				wds = wounds (max hp lost)
 scalew = weapon scaling				cpt = corruption (caused by Blood Vial potion/other)
-eqp = equipment %
+eqp = equipment %					salt = current salt
+gold = current gold
 
 Weapon Checks
 You can also check to see if the player has certain weapons equipped!
