@@ -13,39 +13,27 @@ This doc file describes keywords and extra notes for weapons.sjson.
 ------------------------------------------------------------------------------------------------------------------------------------------
 Weapon Types
 
-todo
-
-WEAP_TYPE_DAGGER = 0									WEAP_TYPE_WHIP = 11
-WEAP_TYPE_SWORD = 1										WEAP_TYPE_GREATAXE = 12  
-WEAP_TYPE_HAMMER = 2									WEAP_TYPE_POLEAXE = 13 
-WEAP_TYPE_AXE = 3										WEAP_TYPE_FLINTLOCK = 14 
-WEAP_TYPE_SPEAR = 4										WEAP_TYPE_TORCH = 15 
-WEAP_TYPE_HALBERD = 5									WEAP_TYPE_WAND = 16 
-WEAP_TYPE_GREATSWORD = 6								WEAP_TYPE_GREATSCISSOR = 17 
-WEAP_TYPE_GREATHAMMER = 7								WEAP_TYPE_GUNBLADE = 18
-WEAP_TYPE_BOW = 8										WEAP_TYPE_WHIPSWORD = 19
-WEAP_TYPE_CROSSBOW = 9									WEAP_TYPE_LONGSWORD = 20
-WEAP_TYPE_STAFF = 10									WEAP_TYPE_FISTS = 21		| Don't use
-
+DAGGER								SWORD
+HAMMER								AXE
+SPEAR								HALBERD
+GREATSWORD							GREATHAMMER
+BOW									CROSSBOW
+STAFF								WHIP
+GREATAXE							POLEAXE
+FLINTLOCK							WAND
+GREATSCISSOR						GUNBLADE
+WHIPSWORD							LONGSWORD							
+CHAINWHIP							OAR
+TORCH = Don't use 					FISTS = Don't use
+ 
 ------------------------------------------------------------------------------------------------------------------------------------------
 CharmMove
 
-todo
+Some weapons use alternative charm locations.
+This is unchanged from the original game.
+
+NO_MOVE			= Uses default charm location
+CHARM_MOVE1		= Uses alternative charm location 1
+CHARM_MOVE2		= Uses alternative charm location 2
+
 ------------------------------------------------------------------------------------------------------------------------------------------
-Specials
-
-WEAP_SPECIAL_CHAIN_WHIP = 2 	| Changes the weapon sound effects
-WEAP_SPECIAL_WOOD_OAR = 9		| Changes the weapon sound effects
-
-------------------------------------------------------------------------------------------------------------------------------------------
-WeaponShieldName
-
-	If the weapon can Parry or Block it will use the shield linked here by name.
-	Parry window, Parry vs Bash, Block values and Bash values are located on Shields.
-	Item upgrade rank is pulled from the weapon.
-	
-------------------------------------------------------------------------------------------------------------------------------------------
-SwooshColors
-
-	This represents a 3 layer RGBA color system for the arcs made by weapons. 
-	Most weapons only use the first layer.

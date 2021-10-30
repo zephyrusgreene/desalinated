@@ -54,7 +54,7 @@ ParryAnim 				| Name of animation used for Parry. | Defaults: "parry", "shieldsm
 Requirements			| Levels and names of skills required to use item. | Class Ranks are purely for UI
 TransmutePath			| Items and salt required to craft this item at the alchemist NPC.
 SwooshColors			| Colors to use for melee attack overlay (arcing swoosh) | Contains 3 visual layers.
-IsHeavyArmor 			| True = Counts as heavy armor
+ArmorClass	 			| Heavy vs Light
 SpellFocusCost			| The base mana (focus) cost of Magics.
 SpellStaminaCost 		| The base stamina cost of Magics.
 SpellElemBal 			| The value of imbalance caused by lightning and fire magics. | Also used for corruption from blood magic.
@@ -67,6 +67,7 @@ ConsumeDepletes 		| Whether or not this item is reduced on usage. False = Infini
 StatScaling
 
 Damage stats follow a soft scaling mechanic. The math is as follows: 
+
 	ScaledDam = BaseDam * (1 + statVal * statScale / softCap)
 	
 The stat scaling is now dynamic to softcap, which can be changed in charsheet.sjson.
