@@ -7,7 +7,7 @@ by Zephyrus Greene
 
 
 
-Weapons, Weapons, Weapons
+Weapons - Weapons - Weapons
 
 This doc file describes keywords and extra notes for weapons.sjson. 
 ------------------------------------------------------------------------------------------------------------------------------------------

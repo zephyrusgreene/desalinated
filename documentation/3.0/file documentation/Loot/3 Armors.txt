@@ -7,7 +7,7 @@ by Zephyrus Greene
 
 
 
-Armors, do people even use these?
+Armors - do people even use these?
 
 This doc file describes keywords and extra notes for armors.sjson.
 ------------------------------------------------------------------------------------------------------------------------------------------
