@@ -13,7 +13,7 @@ This doc file describes keywords and extra notes for consumables.sjson.
 ------------------------------------------------------------------------------------------------------------------------------------------
 Item Type
 
-The type of an item or magic. Mostly controls the item slot it can be equipped into.
+The type of an item or magic. Mostly controls the slot it can be equipped into.
 
 QUICK_USE 
 THROW 
@@ -34,7 +34,7 @@ Action Effects
 
 Also used for magics.
 
-ICON_1 through ICON_9	= Symbol of a creed. The number is the id. Not all were used in the original game.
+ICON_[X]	= Symbol of a creed. The number is the id. Not all were used in the original game.
 SIP 					= Player will drink the item.
 CRUSH					= Player will crush the item.
 EAT						= Player will eat the item.
