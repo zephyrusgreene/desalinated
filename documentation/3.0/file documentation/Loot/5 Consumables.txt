@@ -30,11 +30,20 @@ BLOOD_INCANT
 HIDDEN = Item won't show up in menus after being picked up.
 
 ------------------------------------------------------------------------------------------------------------------------------------------
+Potion Effects
+
+Affixes are used for potion and buff-enchant effects. See the affix documentation for potion affixes.
+
+------------------------------------------------------------------------------------------------------------------------------------------
 Action Effects
 
-Also used for magics.
+Action effects are a rebuilt scripted action the player acts out or triggers. All items and magic now use these.
+There's nothing significantly different between items and magics now.
 
-ICON_[X]	= Symbol of a creed. The number is the id. Not all were used in the original game.
+------------------------------------------------------------------------------------------------------------------------------------------
+Activatable Items Category
+
+ICON_[X]				= Symbol of a creed. The number is the id. Not all were used in the original game.
 SIP 					= Player will drink the item.
 CRUSH					= Player will crush the item.
 EAT						= Player will eat the item.
@@ -49,7 +58,44 @@ ENCHANT					= Player will buff their weapon.
 EXPUNGE_ENCHANT			= Player will buff their weapon or expunge a sanctuary.
 BOTTLE_MSG				= Triggers message menu.
 TORCH					= Is a torch.
-REVIVE					= Revives coop player.
 COOP_BELL				= Returns coop player to their world.
+
+------------------------------------------------------------------------------------------------------------------------------------------
+Throwing Attacks (missiles)
+
+Most missiles are interchangeable now.
+
+Grenado									WaterPot
+FirePot									BloodPot
+Dagger									PoisonDagger
+FireDagger								CreedPoisonDagger
+Potato									FlyingAxe (new)
+
+------------------------------------------------------------------------------------------------------------------------------------------
+Ammo Effects (missiles)
+
+Bolt									BoltPoison
+BoltFire								Arrow
+ArrowSteel								ArrowFire
+ArrowPoison								FlintShot
+FlintShotLit							FlintShotPoison
+
+------------------------------------------------------------------------------------------------------------------------------------------
+Magics Category (missiles)
+
+LitBolt									LitBoltSingle
+LitArc									FireBall
+LitBall									LitBarrage
+FlameBarrage							DragonFire
+FlashFire								FireStar
+DarkReach								DarkCoil
+DarkCoilSingle							DarkArrows
+WildFire								LitStorm
+FlameOrbiters							LitPod
+StaticGeist								GuardianBlade
+FlameGuardian							PoisonGas
+PoisonGasInstant						DarkSwarm
+DarkSwarmSingle							HolyRay
+HolyOrbiters							Revive
 
 ------------------------------------------------------------------------------------------------------------------------------------------
