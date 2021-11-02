@@ -1,0 +1,60 @@
+Salt and Sanctuary: Desalinated
+Last Updated for 3.0.0
+by Zephyrus Greene
+
+
+
+
+
+
+Skilltree
+
+This doc file describes keywords and extra notes for skilltree.sjson
+------------------------------------------------------------------------------------------------------------------------------------------
+Skillnode Data fields
+
+Name			= Internal name | must be unique in desalinated
+Title			= Skill's localized name display (languages)
+FlavorDesc		= Flavor text by localization
+SkillDesc 		= Normal text description by localization
+Type 			= Name of the skilltype | See below
+ImageID			= Skill image id | see also imgs.sjson
+StatsPerLevel 	= How many ranks are added per point
+CostPerLevel	= How many skill points are required
+MaxLevel		= Maximum ranks that can be learned
+Parents			= A size 2 list of attached skillnodes
+RequiredNode	= A special, extra required node | See below
+Location		= X,Y coordinate on the skilltree
+SkillAffix		= Affix(es) granted per level of this skill. | See below
+
+------------------------------------------------------------------------------------------------------------------------------------
+Affixes
+
+You can treat Affixes here as permanently equipped gear. In charsheet.sjson you can turn the stat bonuses of class skills off. 
+This is intended to allow affixes to do heavy lifting instead.
+
+I highly suggest using conditional effects for skills, such as weapon based checks.
+E.g. if swords then +10% attack speed else 0% which would be used as "swords ? 0.10 : 0"
+
+------------------------------------------------------------------------------------------------------------------------------------------
+Skill Types
+
+SWORD_CLASS										MACE_CLASS
+DAGGER_CLASS									SHIELD_CLASS
+GREATHAMMER_CLASS								WHIP_CLASS
+STAFF_CLASS										BOW_CLASS
+CROSSBOW_CLASS									POLEAXE_CLASS 
+HEAVY_ARMOR_CLASS								LIGHT_ARMOR_CLASS 	
+PRAYER_CLASS									MAGIC_CLASS 	
+WAND_CLASS 	
+
+STR												DEX 			
+MAG												WIS 					
+END												WILL 		
+HEALTH_POT										MANA_POT
+
+------------------------------------------------------------------------------------------------------------------------------------------
+WIP 
+
+Not Complete
+------------------------------------------------------------------------------------------------------------------------------------------
