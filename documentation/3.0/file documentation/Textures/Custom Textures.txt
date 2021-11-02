@@ -1,0 +1,17 @@
+Salt and Sanctuary: Desalinated
+Last Updated for 3.0.0
+by Zephyrus Greene
+
+
+
+
+
+
+Customizing Textures
+
+This doc file describes keywords and extra notes for textures.sjson
+------------------------------------------------------------------------------------------------------------------------------------------
+WIP 
+
+Not Complete
+------------------------------------------------------------------------------------------------------------------------------------------
