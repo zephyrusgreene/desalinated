@@ -1,19 +1,21 @@
 Salt and Sanctuary: Desalinated
-Last Updated For 3.0.0
-by Zephyr Greene
+Last Updated for 3.0.0
+by Zephyrus Greene
 
 
 
 
 
 
-Creed Items List
+Creed Items
+
+This doc file describes keywords and extra notes for creeditems.sjson.
 ------------------------------------------------------------------------------------------------------------------------------------------
 
 ID					= The internal id of the creed | Not worth editing
 AltMonsterStr		= Internal name of the creed | Don't edit
 Consumable			= The 4 creed items in order: Health potion, Mana potion, special item1, special item2
-					-- Uses loot names, must be consumables
+						-- Uses loot names, must be consumables
 ------------------------------------------------------------------------------------------------------------------------------------------
 Custom Creeds
 
