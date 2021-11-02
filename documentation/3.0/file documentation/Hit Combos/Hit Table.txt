@@ -1,0 +1,31 @@
+Salt and Sanctuary: Desalinated
+Last Updated for 3.0.0
+by Zephyrus Greene
+
+
+
+
+
+
+Hits Table
+
+This doc file describes keywords and extra notes for hitstable.sjson.
+------------------------------------------------------------------------------------------------------------------------------------------
+
+This file controls animation triggers used for melee hits that were previously internally controlled.
+This controls many stamina costs and damage multipliers used for combos.
+
+Note: While hits are labelled with weapon types, some are reused by other weapon types.
+
+Stamina costs for Spells use magics.sjson and Ranged weapon costs are per ammo in consumables.sjson.
+
+------------------------------------------------------------------------------------------------------------------------------------------
+Name				= Original Constant Name | Not used, for reference only
+ID					= Original Constant Value | Not used, for reference only
+DamagePercent		= Damage ratio of the hit-trigger. | 1.0 == 100%
+StaggerAdd			= Stagger damage per anim | Melee weapons have a base of 0 stagger and use this in vanilla
+StaminaCost			= The stamina cost of the anim. | Default cost.
+StaminaCostOneHand	= The stamina cost of the anim when the weapon is used as one-handed.
+StaminaRegenFreeze	= Time between end of animation and stamina starting to regenerate | Default is often 1.0, but 1.5 equals 1 second.
+	
+------------------------------------------------------------------------------------------------------------------------------------------
