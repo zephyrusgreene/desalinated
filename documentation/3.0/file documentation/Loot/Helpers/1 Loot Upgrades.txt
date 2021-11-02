@@ -1,0 +1,28 @@
+Salt and Sanctuary: Desalinated
+Last Updated for 3.0.0
+by Zephyr Greene
+
+
+
+
+
+
+Loot Upgrades
+
+This doc file describes keywords and extra notes for lootupgrades.sjson
+------------------------------------------------------------------------------------------------------------------------------------------
+
+To make the loot files smaller and to be able to modify large groups of items at once, I created this file.
+
+By default all upgrades go to a max of 7 ranks, this can be increased in charsheet.sjson.
+If you increase the upgrade ranks, you must add Material entries into this file for each group and level.
+
+------------------------------------------------------------------------------------------------------------------------------------------
+Name				= Internal name | Used via reference in weapons.sjson, armors.sjson, and shields.sjson
+
+Materials			= Each material group represents an item level
+- Name				= Item name required from materials.sjson
+- ReqCount			= Number of the item required
+- SaltCost			= Salt required for this level
+
+------------------------------------------------------------------------------------------------------------------------------------------
