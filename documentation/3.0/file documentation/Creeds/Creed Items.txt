@@ -1,0 +1,23 @@
+Salt and Sanctuary: Desalinated
+Last Updated For 3.0.0
+by Zephyr Greene
+
+
+
+
+
+
+Creed Items List
+------------------------------------------------------------------------------------------------------------------------------------------
+
+ID					= The internal id of the creed | Not worth editing
+AltMonsterStr		= Internal name of the creed | Don't edit
+Consumable			= The 4 creed items in order: Health potion, Mana potion, special item1, special item2
+					-- Uses loot names, must be consumables
+------------------------------------------------------------------------------------------------------------------------------------------
+Custom Creeds
+
+1. You can change the creed Icon's texture and localized name in Consumables.sjson.
+2. NPC's for creeds are hardcoded, but you can change their inventories and dialogs in dialogs.sjon.
+
+------------------------------------------------------------------------------------------------------------------------------------------
