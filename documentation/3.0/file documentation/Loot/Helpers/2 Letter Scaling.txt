@@ -1,0 +1,20 @@
+Salt and Sanctuary: Desalinated
+Last Updated for 3.0.0
+by Zephyr Greene
+
+
+
+
+
+
+Letter Scaling
+
+This doc file describes keywords and extra notes for letterscaling.sjson
+------------------------------------------------------------------------------------------------------------------------------------------
+This file simply controls what the threshold of each stat scaling letter is.
+Where anything 3.75 or above is S and anything above 0.001 is at least E.
+
+The stat scaling values represent a percentage bonus such that 1.0 grants +100% damage over 50 stats (default softcap).
+
+The actual letters are still hardcoded, but individual weapon values can be seen in game using the same toggle as weight%.
+------------------------------------------------------------------------------------------------------------------------------------------
