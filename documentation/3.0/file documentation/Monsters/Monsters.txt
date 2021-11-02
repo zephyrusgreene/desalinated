@@ -1,0 +1,23 @@
+Salt and Sanctuary: Desalinated
+Last Updated for 3.0.0
+by Zephyrus Greene
+
+
+
+
+
+
+Monsters
+
+This doc file describes keywords and extra notes for monsters.sjson.
+------------------------------------------------------------------------------------------------------------------------------------------
+I'm not going to go into too much detail here.
+------------------------------------------------------------------------------------------------------------------------------------------
+Monsters
+
+Controls which animations monsters use, their titles and descriptions, base health, etc.
+Also contains drop table information. Item drop stats are related to player Item Drop stat, starting at about half what's listed here.
+
+All sorts of stuff can be changed here, but you may experience unpredictable stuff including crashes if playing with anims.
+
+------------------------------------------------------------------------------------------------------------------------------------------
