@@ -9,9 +9,41 @@ by Zephyrus Greene
 
 Customizing Textures
 
-This doc file describes keywords and extra notes for textures.sjson
+This doc file describes keywords and extra notes for texturelist.sjson
 ------------------------------------------------------------------------------------------------------------------------------------------
-WIP 
 
-Not Complete
+Custom textures can be used for weapons, armors, and shields.
+To add textures, place them in the folder "Content\gfx\custom\"
+
+------------------------------------------------------------------------------------------------------------------------------------------
+
+To use these textures use the file name, minus the extension such as "serrated_sword"
+Consumables.xnb and Items.xnb can also be added, but are referenced by sprite id like the original game.
+
+------------------------------------------------------------------------------------------------------------------------------------------
+Subfolders 
+
+You may add subfolders to the custom folder.
+Desalinated will require subfolder paths when referenced in weapons.sjson, armors.sjson, and shields.sjson.
+As well as texturelist.
+
+The custom folder does not need a reference, it is prepended automatically.
+
+------------------------------------------------------------------------------------------------------------------------------------------
+Last Step
+
+The texturelist file MUST also contain a filename and sprite sheet reference for the game to read the texture in.
+The file extension isn't necessary.
+
+[
+	{
+		filename = "serrated_sword",
+		spriteReference = "sword_katana"
+	},
+	{
+		filename = "demo/rusty_sword",
+		spriteReference = "sword_katana"
+	}
+]
+
 ------------------------------------------------------------------------------------------------------------------------------------------
