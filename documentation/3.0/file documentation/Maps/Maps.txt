@@ -1,0 +1,22 @@
+Salt and Sanctuary: Desalinated
+Last Updated for 3.0.0
+by Zephyrus Greene
+
+
+
+
+
+
+Custom Maps
+
+This doc file describes how to use custom maps.
+------------------------------------------------------------------------------------------------------------------------------------------
+
+Place any custom maps for the mod in the "maps" folder
+and it will be available for selection at bootup.
+
+The modloader saves your last used map and whether or not custom maps were turned on.
+Toggling custom maps off will use the map in the game's base folder.
+Toggling the checkbox on will re-enable the last used map again.
+
+------------------------------------------------------------------------------------------------------------------------------------------
