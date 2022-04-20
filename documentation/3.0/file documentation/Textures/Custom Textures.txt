@@ -10,15 +10,33 @@ by Zephyrus Greene
 Customizing Textures
 
 This doc file describes keywords and extra notes for texturelist.sjson
+
+Custom textures are not produced for this mod directly. You may create your own .png and transform them to .xnb,
+or you may find textures on nexusmods.com and elsewhere.
+
 ------------------------------------------------------------------------------------------------------------------------------------------
+Add Custom Texture
 
 Custom textures can be used for weapons, armors, and shields.
 To add textures, place them in the folder "Content\gfx\custom\"
 
-------------------------------------------------------------------------------------------------------------------------------------------
+Adding weapon, armors, and shield textures will increase RAM usage very mildly.
+Since these are added to memory at bootup, existing weapons, armors, and shields will not be removed or replaced.
 
-To use these textures use the file name, minus the extension such as "serrated_sword"
-Consumables.xnb and Items.xnb can also be added, but are referenced by sprite id like the original game.
+------------------------------------------------------------------------------------------------------------------------------------------
+Setup
+
+To use custom textures add the file name to texturelist.sjson, excluding the extension (.xnb).
+Filename would appear as "serrated_sword"
+
+------------------------------------------------------------------------------------------------------------------------------------------
+Special Notes
+
+You may also use the spritesheets for consumables.xnb and items.xnb (UI-Items), but these maintain original ID references.
+This is a file swap at bootup. The originals are replaced entirely with whatever file you use.
+
+You use these the same way as other custom textures.
+Any file listed with the spriteReference = "consumables" will replace the original texture sheet.
 
 ------------------------------------------------------------------------------------------------------------------------------------------
 Subfolders 
