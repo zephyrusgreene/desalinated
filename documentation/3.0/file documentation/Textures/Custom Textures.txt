@@ -35,6 +35,8 @@ Special Notes
 You may also use the spritesheets for consumables.xnb and items.xnb (UI-Items), but these maintain original ID references.
 This is a file swap at bootup. The originals are replaced entirely with whatever file you use.
 
+Id's are not in a perfect grid and may take some trial and error to find unused id's.
+
 You use these the same way as other custom textures.
 Any file listed with the spriteReference = "consumables" will replace the original texture sheet.
 
